@@ -1,10 +1,8 @@
-# Course Source Notes
+# Course Concept Notes
 
-These notes summarize the five course PDFs copied into this folder for ongoing project reference.
+These notes summarize the course concepts used by ScholarProof. Official Kaggle/Google course PDFs are not redistributed in this public repository.
 
 ## Day 1 - The New SDLC With Vibe Coding
-
-Local file: `Day_1_The_New_SDLC_With_Vibe_Coding.pdf`
 
 Key planning implications:
 
@@ -16,8 +14,6 @@ Key planning implications:
 
 ## Day 2 - Agent Tools and Interoperability
 
-Local file: `Day_2_Agent_Tools_Interoperability.pdf`
-
 Key planning implications:
 
 - MCP should standardize tool access instead of ad hoc integrations.
@@ -27,8 +23,6 @@ Key planning implications:
 - For ScholarProof, MCP should expose safe scholarship search, fetch, source verification, rule extraction, and profile matching tools.
 
 ## Day 3 - Agent Skills
-
-Local file: `Day_3_Agent_Skills.pdf`
 
 Key planning implications:
 
@@ -40,8 +34,6 @@ Key planning implications:
 
 ## Day 4 - Security and Evaluation
 
-Local file: `Day_4_Security_Evaluation.pdf`
-
 Key planning implications:
 
 - Agentic systems need sandboxing, supply-chain defenses, egress governance, and contextual authorization.
@@ -51,8 +43,6 @@ Key planning implications:
 - For ScholarProof, the main safety issue is false eligibility. The eval gate must require zero false eligible verdicts.
 
 ## Day 5 - Spec-Driven Production Grade Development
-
-Local file: `Day_5_Spec_Driven_Production.pdf`
 
 Key planning implications:
 

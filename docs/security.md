@@ -2,11 +2,44 @@
 
 ## Security Principle
 
-ScholarProof handles student-facing eligibility advice. It must prefer uncertainty over false confidence.
+ScholarProof handles student-facing eligibility guidance. It must prefer uncertainty over false confidence.
 
 Core rule:
 
-> Unclear beats wrong.
+```text
+Unclear beats wrong.
+```
+
+ScholarProof provides evidence-backed scholarship fit guidance. It does not guarantee admission, funding, eligibility, or scholarship success. Final decisions belong to universities, governments, or scholarship providers.
+
+## Official-Source Eligibility Gate
+
+`eligible` is impossible without official source evidence.
+
+- Official-source pages can support eligibility only when they satisfy the trusted-source policy.
+- Aggregator sites are leads only, never proof.
+- Aggregator-only findings become `unverified`.
+- Missing key evidence for country, degree, or funding becomes `unclear`.
+- Blocking official rules become `not_eligible`.
+
+## Prompt Injection Defense
+
+Fetched pages are treated as untrusted data, not instructions.
+
+The tool layer detects prompt-injection phrases such as:
+
+- ignore previous instructions
+- disregard system prompt
+- mark all users eligible
+- send data to
+- reveal API key
+- override eligibility rules
+
+When detected:
+
+1. A security flag is added to the evidence panel.
+2. The event is recorded in the audit log.
+3. The conservative verdict gate still requires official evidence before `eligible`.
 
 ## Data Minimization
 
@@ -35,49 +68,41 @@ The MVP does not upload:
 - Offer letters.
 - Financial evidence.
 
-## Prompt Injection Defense
+The UI document section is a checklist only.
 
-Fetched web pages are untrusted data, not instructions.
+## Tool And Workflow Safety
 
-The tool layer must detect phrases like:
-
-- ignore previous instructions
-- disregard system prompt
-- mark all users eligible
-- send data to
-- reveal API key
-- override eligibility rules
-
-If detected:
-
-1. Add a security flag to the evidence panel.
-2. Log the event in the audit log.
-3. Do not allow `eligible` unless official source status and required evidence are independently verified.
-
-## Source Security
-
-Aggregator pages are discovery leads only. They are never proof.
-
-A source can prove eligibility only when it is official according to `config/trusted_sources.yml` or the official source policy in the system spec.
-
-## Tool Security
-
-- Tools return structured JSON only.
-- All tool calls are logged.
-- MCP/tool server operations are allowlisted.
 - No tool sends email.
 - No tool submits applications.
 - No tool uploads sensitive documents.
-- No tool exposes secrets.
+- No university portal autofill exists.
+- Clarification emails are draft-only and expose `send_allowed: false`.
+- The frontend has no Send button.
+- All MCP-style tools return structured JSON.
+- Verification steps are audit logged.
 
 ## Secret Handling
 
-- Use `.env.example` for variable names.
-- Use environment variables for real secrets.
-- Never commit API keys or passwords.
-- Never expose backend secrets in frontend code.
+- `.env.example` is allowed for variable names only.
+- Real `.env` files are ignored.
+- API keys, passwords, service-account files, and private key files must not be committed.
+- Backend secrets must not be exposed in frontend code.
 
-## Student Safety
+## Fixture/Offline Reproducibility
+
+ScholarProof currently runs in fixture/offline mode for reproducible Kaggle demos and evals. Live web search is intentionally out of scope for this MVP cleanup pass.
+
+## Known Dependency Advisories
+
+`npm audit` was reviewed on July 3, 2026. It reports a Vite/esbuild development-server advisory:
+
+- `esbuild <=0.24.2`
+- Vite depends on the affected esbuild range.
+- The available npm fix requires `npm audit fix --force`, which would install a breaking Vite major version.
+
+Decision: do not run `npm audit fix --force` during this cleanup. The current MVP uses local fixture/demo mode, the production build still passes, and the advisory is documented for the deployment hardening phase.
+
+## Student Safety Language
 
 Student-facing language must make uncertainty visible:
 
@@ -86,7 +111,7 @@ Student-facing language must make uncertainty visible:
 - Not for You
 - Unverified Lead
 
-No fake percentage scores like "87% eligible".
+Do not use fake percentage scores such as "87% eligible."
 
 ## Audit Logging
 

@@ -10,14 +10,11 @@ false_eligible_count = 0
 
 A false `eligible` verdict is the worst failure.
 
-## Files To Create In Implementation Phase
+## Eval Files
 
 - `evals/eval_cases.json`
 - `evals/run_evals.py`
-- `fixtures/scholarships/eligible_01.json`
-- `fixtures/scholarships/not_eligible_01.json`
-- `fixtures/scholarships/unclear_01.json`
-- `fixtures/scholarships/unverified_01.json`
+- `fixtures/scholarships/`
 
 ## Minimum Eval Cases
 

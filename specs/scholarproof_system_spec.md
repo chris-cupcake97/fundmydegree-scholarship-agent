@@ -239,7 +239,7 @@ Tools return structured JSON:
 9. Eval runner passes with `false_eligible_count = 0`.
 10. No API keys are committed.
 11. `.env.example` exists.
-12. Dockerfile exists.
+12. Deployment guide exists; Docker packaging is planned for the deployment phase.
 13. README explains setup and Kaggle concepts.
 14. AGENTS.md exists.
 15. `.agent/skills` contains four skills.

@@ -1,38 +1,14 @@
 # ScholarProof
 
-Find scholarships that are real - and right for you.
+Find scholarships that are real and right for you.
 
-ScholarProof is a Kaggle AI Agents: Intensive Vibe Coding Capstone project for the Agents for Good track.
+ScholarProof is a Kaggle AI Agents: Intensive Vibe Coding Capstone project for the Agents for Good track. It helps international students find scholarship opportunities, verify official sources, and check whether scholarship rules fit a lightweight student profile.
 
-## Problem
+ScholarProof provides evidence-backed scholarship fit guidance. It does not guarantee admission, funding, eligibility, or scholarship success. Final decisions belong to universities, governments, or scholarship providers.
 
-International students do not need another messy scholarship list. They need to know whether an opportunity is real, current, official, and actually applicable to their profile before spending time applying.
+## Current Status
 
-ScholarProof answers questions like:
-
-- Is this scholarship real?
-- Is it from an official source?
-- Is it current?
-- Can my country apply?
-- Does my degree level match?
-- Does my field match?
-- Is the funding enough?
-- Is the deadline still open?
-- Do I need a separate application?
-- Am I wasting time?
-
-## Solution
-
-ScholarProof uses a focused agent workflow to:
-
-1. Collect a lightweight student profile.
-2. Find candidate scholarships.
-3. Verify official sources.
-4. Extract eligibility rules.
-5. Match rules against the student profile.
-6. Produce conservative verdicts with evidence.
-7. Draft clarification emails when rules are unclear.
-8. Save simple verified results.
+ScholarProof currently includes the core verification engine, eval harness, FastAPI backend, MCP-style tool layer, ADK-style agent layer, React/Vite frontend UI, and fixture/offline demo mode.
 
 ## Core Rule
 
@@ -49,33 +25,32 @@ ScholarProof never marks a scholarship as `eligible` unless official evidence pr
 | `not_eligible` | Not for You | Official source contains a blocking rule. |
 | `unverified` | Unverified Lead | Found online, but no acceptable official source proves it yet. |
 
-## Why Agents Are Needed
+## MVP Workflow
 
-Scholarship verification is a multi-step reasoning workflow:
+1. Create a lightweight student profile.
+2. Search fixture scholarships.
+3. Verify each candidate against official-source evidence.
+4. Review matched, blocking, and unclear rules.
+5. Inspect the evidence panel and audit timeline.
+6. Draft a clarification email only for unclear cases.
+7. Save simple verification results.
 
-- Discovery finds possible opportunities.
-- Source verification separates official proof from aggregators.
-- Eligibility extraction turns messy pages into structured rules.
-- Profile matching checks fit against student details.
-- Conservative verdicting prevents false confidence.
-- Clarification drafting helps students ask the right follow-up questions.
-
-A single generic chatbot would be too vague. ScholarProof uses bounded agents and tools so each step is auditable.
+The MVP does not include portal autofill, application submission, automatic email sending, sensitive document uploads, generic SOP writing, or claims of global scholarship coverage.
 
 ## Architecture
 
 ```mermaid
 flowchart TD
-    UI["Student UI"] --> API["Backend API"]
+    UI["React/Vite UI"] --> API["FastAPI Backend"]
     API --> ROOT["Root Orchestrator Agent"]
     ROOT --> FINDER["Finder Agent"]
     ROOT --> VERIFIER["Verifier Agent"]
     ROOT --> EMAIL["Clarification Email Skill"]
-    FINDER --> TOOLS["MCP-style Tool Server"]
+    FINDER --> TOOLS["MCP-style Tool Layer"]
     VERIFIER --> TOOLS
     EMAIL --> TOOLS
-    TOOLS --> DB["SQLite Database"]
-    TOOLS --> LOGS["Audit Logs"]
+    TOOLS --> STORE["In-memory Demo Store"]
+    TOOLS --> AUDIT["Audit Logs"]
     TOOLS --> FIXTURES["Offline Fixtures"]
     API --> EVALS["Evaluation Runner"]
 ```
@@ -84,47 +59,97 @@ flowchart TD
 
 | Concept | Demonstration |
 |---|---|
-| Agent / multi-agent system using ADK | Root Orchestrator, Finder Agent, Verifier Agent. |
-| MCP Server | MCP-style tool layer exposing structured scholarship tools. |
+| Agent / multi-agent system using ADK | Root Orchestrator, Finder Agent, Verifier Agent, and Clarification Email Skill wrapper. |
+| MCP Server | MCP-style tool layer exposing structured scholarship verification tools. |
 | Antigravity | Demo steps and video workflow in `docs/antigravity_demo_steps.md`. |
-| Security features | Source gate, prompt-injection detection, no auto-send, no auto-submit, audit log. |
-| Deployability | Docker, `.env.example`, `/health`, deployment guide. |
+| Security features | Official-source gate, prompt-injection detection, no auto-send, no auto-submit, no sensitive uploads, and audit logs. |
+| Deployability | `.env.example`, `/health`, deployment guide, reproducible fixture mode, and local build checks. |
 | Agent Skills | Four skills in `.agent/skills/`. |
 
-## MVP Screens
+## Backend Setup
 
-- Profile
-- Find Scholarships
-- Eligibility Checker
-- Evidence Panel
-- Draft Email
-- Saved Results
-
-## Setup
-
-The current implementation includes the planning docs, fixture-backed core verification engine,
-eval harness, FastAPI backend API, MCP-style tool layer, and ADK-style agent layer in offline
-fixture mode.
-
-Install API dependencies:
+Create and activate a virtual environment:
 
 ```bash
-python -m pip install -r requirements.txt
+python -m venv .venv
 ```
 
-Run the backend API:
+On Windows PowerShell:
+
+```bash
+.\.venv\Scripts\Activate.ps1
+```
+
+On macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Install backend dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the backend:
 
 ```bash
 python -m scholarproof
 ```
 
-The API starts at:
+Backend docs:
 
 ```text
-http://127.0.0.1:8000
+http://127.0.0.1:8000/docs
 ```
 
-Useful API routes:
+## Frontend Setup
+
+Run the frontend:
+
+```bash
+cd scholarproof/ui
+npm install
+npm run dev
+```
+
+Frontend URL:
+
+```text
+http://127.0.0.1:5173/
+```
+
+## Checks
+
+Run the verification evals:
+
+```bash
+python -B evals/run_evals.py
+```
+
+Run backend, tool, and agent smoke tests:
+
+```bash
+python -B scripts/smoke_api.py
+python -B scripts/smoke_tools.py
+python -B scripts/smoke_agents.py
+```
+
+Run the frontend build:
+
+```bash
+cd scholarproof/ui
+npm run build
+```
+
+Hard eval gate:
+
+```text
+false_eligible_count = 0
+```
+
+## API Routes
 
 - `GET /health`
 - `POST /api/profile`
@@ -137,61 +162,19 @@ Useful API routes:
 - `GET /api/saved-results/{profile_id}`
 - `GET /api/audit/{verification_id}`
 
-Run evals:
+## MCP-Style Tool Layer
 
-```bash
-python evals/run_evals.py
-```
+The tool layer lives in `scholarproof/mcp_server/` and exposes structured JSON tools:
 
-Run the API smoke test:
-
-```bash
-python scripts/smoke_api.py
-```
-
-Run the MCP-style tool smoke test:
-
-```bash
-python scripts/smoke_tools.py
-```
-
-Run the ADK-style agent smoke test:
-
-```bash
-python scripts/smoke_agents.py
-```
-
-Run the frontend:
-
-```bash
-cd scholarproof/ui
-npm.cmd install
-npm.cmd run dev
-```
-
-The frontend starts at:
-
-```text
-http://127.0.0.1:5173
-```
-
-Optional frontend build check:
-
-```bash
-cd scholarproof/ui
-npm.cmd run build
-```
-
-UI smoke flow:
-
-1. Create a profile.
-2. Search scholarships.
-3. Check eligibility.
-4. View evidence.
-5. Draft an email for a Needs Clarification case.
-6. Save a result.
-
-Screenshot capture instructions are in `docs/frontend_screenshots.md`.
+- `search_scholarships`
+- `fetch_page`
+- `classify_source`
+- `extract_rules`
+- `match_profile`
+- `generate_verdict`
+- `save_result`
+- `write_audit_log`
+- `detect_prompt_injection`
 
 List available tools:
 
@@ -205,41 +188,18 @@ Call one tool from the command line:
 python -m scholarproof.mcp_server call classify_source fixture_id=eligible_01
 ```
 
-## MCP-Style Tool Layer
-
-The tool layer lives in `scholarproof/mcp_server/` and exposes structured JSON tools for agents:
-
-- `search_scholarships`
-- `fetch_page`
-- `classify_source`
-- `extract_rules`
-- `match_profile`
-- `generate_verdict`
-- `save_result`
-- `write_audit_log`
-- `detect_prompt_injection`
-
-This demonstrates the Kaggle MCP Server / tool interoperability concept by giving agents a bounded
-tool surface with manifest metadata, input schemas, output schemas, and safety notes. The current
-limitation is intentional: tools run in fixture/offline mode only, with no live web search.
-
 ## ADK-Style Agent Layer
 
 The agent layer lives in `scholarproof/agents/` and demonstrates a bounded multi-agent workflow:
 
-- `RootOrchestratorAgent` accepts a profile and search query, calls Finder, routes candidates to Verifier, and groups verified results.
+- `RootOrchestratorAgent` accepts a profile and query, calls Finder, routes candidates to Verifier, and groups verified results.
 - `FinderAgent` calls `search_scholarships` and returns structured candidates only. It never decides eligibility.
-- `VerifierAgent` calls the MCP tools in order: fetch, classify, injection check, extract, match, verdict, audit.
-- `ClarificationEmailSkillWrapper` drafts emails only for `unclear` verification results and never sends them.
-
-This demonstrates the Kaggle Agent / multi-agent system concept while keeping the capstone scope
-focused. The current limitation is intentional: agents run in fixture/offline mode only, with no
-live web search or application submission.
+- `VerifierAgent` calls the tool sequence: fetch, classify, injection check, extract, match, verdict, audit.
+- `ClarificationEmailSkillWrapper` drafts emails only for `unclear` results and never sends them.
 
 ## Frontend UI
 
-The user-facing UI lives in `scholarproof/ui/` and uses Vite, React, TypeScript, and local CSS.
-It connects to the FastAPI backend in fixture mode and includes:
+The frontend lives in `scholarproof/ui/` and includes:
 
 - Profile Wizard.
 - Find Scholarships.
@@ -248,60 +208,61 @@ It connects to the FastAPI backend in fixture mode and includes:
 - Draft Clarification Email.
 - Saved Results.
 
-The frontend does not add authentication, live web search, document upload, email sending, portal
-autofill, or application submission.
+The frontend uses checklist items for documents. It does not upload passports, bank statements, transcripts, or other sensitive files. It does not include a Send button.
 
-## Evaluation
+## External Tools Used
 
-The eval runner must include at least 12 fixture cases:
+- OpenAI Codex: coding assistant.
+- Google Antigravity: agentic development/demo workflow.
+- FastAPI: backend.
+- React/Vite: frontend.
+- Python eval scripts.
+- Fixture/offline demo mode.
 
-- 3 `eligible`
-- 3 `not_eligible`
-- 3 `unclear`
-- 3 `unverified`
+## Rules Compliance / Safety
 
-Hard gate:
-
-```text
-false_eligible_count = 0
-```
-
-## Deployment
-
-Deployment will use:
-
-- Dockerfile
-- Optional Docker Compose
-- `.env.example`
-- `/health` endpoint
-- Cloud Run or equivalent deployment instructions
+- No committed secrets.
+- No private datasets.
+- No redistributed course PDFs.
+- No auto-send email.
+- No auto-submit application.
+- No sensitive document uploads.
+- Fixture/offline mode for reproducibility.
+- Conservative verdict policy.
+- `false_eligible_count` target is 0.
 
 ## Security Design
 
-- No API keys in frontend.
-- No secrets committed.
-- No real sensitive document upload.
-- No auto-send.
-- No auto-submit.
+Security details are documented in `docs/security.md`.
+
+Key controls:
+
+- Official-source-only eligibility gate.
+- Aggregators are leads only, never proof.
+- Prompt injection detection.
 - Fetched pages treated as untrusted data.
-- Prompt injection detection on page text.
-- Audit log for all tool calls.
+- Draft-only clarification emails.
+- Audit logs for verification steps.
 
 ## Limitations
 
-- ScholarProof does not guarantee admission or scholarship success.
-- It does not find every scholarship in the world.
-- It verifies and ranks discovered opportunities using official-source evidence.
-- It does not submit applications.
-- It does not send emails.
-- It does not replace university admissions offices.
+- ScholarProof does not guarantee admission, eligibility, funding, or scholarship success.
+- ScholarProof does not find every scholarship in the world.
 - Ambiguous cases are marked Needs Clarification.
-- Live web search may vary, so fixture mode is included for demo reliability.
+- Final decisions belong to universities, governments, or scholarship providers.
+- Current MVP uses fixture/offline data for reproducible demo.
 
-## Future Work
+## Documentation
 
-- Add more official source connectors.
-- Add stronger university-domain verification.
-- Add multilingual scholarship pages.
-- Add user-managed saved searches.
-- Add reviewer export packs for advisors.
+- `docs/kaggle_rubric_mapping.md`
+- `docs/security.md`
+- `docs/evaluation.md`
+- `docs/deployment.md`
+- `docs/frontend_screenshots.md`
+- `docs/video_script.md`
+- `docs/antigravity_demo_steps.md`
+- `specs/scholarproof_system_spec.md`
+
+## License
+
+This project code is released under the MIT License.

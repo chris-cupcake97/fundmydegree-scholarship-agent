@@ -1,13 +1,44 @@
 # Frontend Screenshot Checklist
 
-Capture these after running the backend and frontend locally:
+Capture these screenshots for the Kaggle submission after running the backend and frontend locally.
 
-1. Profile Wizard with saved profile chips.
-2. Find Scholarships with grouped fixture results and Agent Summary.
-3. Eligibility Checker for one Strong Fit and one Needs Clarification case.
-4. Evidence Panel showing source details, rules, evidence snippets, and audit timeline.
-5. Draft Clarification Email screen for an unclear case.
-6. Saved Results screen after saving a verified scholarship.
+1. Profile Wizard
+   - Filled student profile.
+   - Profile chips visible.
+   - Document checklist visible as checkboxes only.
 
-Do not include real passports, transcripts, bank statements, API keys, or personal sensitive data.
+2. Find Scholarships
+   - Grouped results visible.
+   - Best Verified Matches, Needs Clarification, Not for You, and Unverified Leads sections visible.
+   - Strong Fit, Needs Clarification, Not for You, and Unverified Lead labels visible across fixture results.
 
+3. Eligibility Checker
+   - Selected scholarship.
+   - Verdict panel.
+   - Matched, blocking, and unclear rules.
+
+4. Evidence Panel
+   - Official source URL.
+   - Official source reason.
+   - Security flags row.
+   - Extracted rules.
+   - Evidence snippets.
+   - Audit log timeline.
+
+5. Draft Email
+   - Warning banner showing "Draft only".
+   - Copy Draft action.
+   - Save Draft action.
+   - Back to Evidence action.
+   - No Send button.
+
+6. Saved Results
+   - Saved scholarship list.
+
+7. Backend API Docs
+   - FastAPI docs page at `http://127.0.0.1:8000/docs`.
+
+8. Eval Output
+   - `false_eligible_count = 0`.
+
+Do not include real passports, transcripts, bank statements, API keys, private credentials, phone numbers, home addresses, or personal sensitive data.

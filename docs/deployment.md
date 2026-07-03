@@ -4,14 +4,15 @@
 
 ScholarProof must be easy to run locally, easy to evaluate, and clear enough to deploy to Cloud Run or an equivalent service.
 
-## Required Deployment Artifacts
+## Current Deployment Readiness
 
-- `Dockerfile`
-- Optional `docker-compose.yml`
 - `.env.example`
 - `/health` endpoint
 - README setup instructions
-- Cloud Run or equivalent deployment instructions
+- Fixture/offline demo mode
+- Backend and frontend build checks
+
+Docker packaging and Cloud Run deployment are planned for the deployment phase. They are not required for the current local fixture-mode MVP.
 
 ## Environment Variables
 
@@ -42,7 +43,7 @@ python -m scholarproof
 python evals/run_evals.py
 ```
 
-## Docker Run Plan
+## Future Docker Run Plan
 
 Planned commands:
 
@@ -53,7 +54,7 @@ docker run --env-file .env -p 8080:8080 scholarproof
 
 ## Health Check
 
-The backend must expose:
+The backend exposes:
 
 ```text
 GET /health
@@ -64,7 +65,9 @@ Expected response:
 ```json
 {
   "status": "ok",
-  "fixture_mode": true
+  "service": "scholarproof-api",
+  "mode": "fixture",
+  "verdict_policy": "conservative"
 }
 ```
 

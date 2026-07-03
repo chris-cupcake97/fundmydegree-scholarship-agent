@@ -14,7 +14,7 @@ Source of truth:
 | MCP Server | MCP-style tool server in `scholarproof/mcp_server/` for search, fetch, source classification, rule extraction, profile matching, verdict generation, saving, audit logging, and prompt-injection detection. | Code |
 | Antigravity | Demo workflow showing repo inspection, UI issue fixing, diff review, local run, and browser testing. | Video |
 | Security features | Official-source gate, no auto-send, no auto-submit, prompt-injection detection, no sensitive uploads, audit logs. | Code and video |
-| Deployability | Dockerfile, `.env.example`, `/health`, deployment docs, fixture demo mode. | Video and docs |
+| Deployability | `.env.example`, `/health`, deployment docs, fixture demo mode, backend smoke tests, and frontend build checks. | Video and docs |
 | Agent Skills | Four skills under `.agent/skills/`. | Code and video |
 
 ## Pitch Rubric: 30 Points
