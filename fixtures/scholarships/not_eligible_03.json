@@ -1,0 +1,29 @@
+{
+  "url": "https://studyinsweden.se/scholarships/technology-scholarship/",
+  "provider": "Study in Sweden",
+  "page_text": "Official Study in Sweden scholarship page for 2026/27. The technology scholarship application deadline was 15 January 2026. Late applications are not accepted.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to 2026/27 entry.",
+      "evidence_text": "Official page states the 2026/27 scholarship cycle.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Applicants from Sri Lanka are eligible.",
+      "evidence_text": "Official page includes Sri Lanka in the eligible country list.",
+      "status": "matched",
+      "confidence": 0.92
+    },
+    {
+      "rule_type": "deadline",
+      "requirement_text": "Application must be submitted by 15 January 2026.",
+      "evidence_text": "Official page says late applications are not accepted after 15 January 2026.",
+      "status": "blocking",
+      "confidence": 0.97
+    }
+  ]
+}
+

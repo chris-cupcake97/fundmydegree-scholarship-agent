@@ -1,0 +1,71 @@
+{
+  "url": "https://www.aalto.fi/en/admission-services/global-technology-grant",
+  "provider": "Aalto University",
+  "page_text": "Official Aalto University page for the 2026/27 Global Technology Grant. Non-EU/EEA Master's applicants in technology fields may apply. The page mentions competitive awards but does not state the percentage or value of funding.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Grant applies to 2026/27.",
+      "evidence_text": "Official Aalto page states 2026/27 Global Technology Grant.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Non-EU/EEA applicants are eligible.",
+      "evidence_text": "Official Aalto page says non-EU/EEA applicants may apply.",
+      "status": "matched",
+      "confidence": 0.92
+    },
+    {
+      "rule_type": "residence",
+      "requirement_text": "Applicant may reside outside Finland.",
+      "evidence_text": "Official Aalto page addresses international applicants.",
+      "status": "matched",
+      "confidence": 0.84
+    },
+    {
+      "rule_type": "fee_status",
+      "requirement_text": "Applicant is liable for tuition fees.",
+      "evidence_text": "Official Aalto page says the grant is for tuition-fee-liable students.",
+      "status": "matched",
+      "confidence": 0.92
+    },
+    {
+      "rule_type": "degree_level",
+      "requirement_text": "Open to Master's applicants.",
+      "evidence_text": "Official Aalto page states Master's applicants may apply.",
+      "status": "matched",
+      "confidence": 0.93
+    },
+    {
+      "rule_type": "field",
+      "requirement_text": "Technology and AI fields are included.",
+      "evidence_text": "Official Aalto page includes technology fields and AI-related programmes.",
+      "status": "matched",
+      "confidence": 0.88
+    },
+    {
+      "rule_type": "funding_amount",
+      "requirement_text": "Award must meet at least 40 percent funding need.",
+      "evidence_text": "",
+      "status": "unclear",
+      "confidence": 0.2
+    },
+    {
+      "rule_type": "deadline",
+      "requirement_text": "Deadline is open/current.",
+      "evidence_text": "Official Aalto page says applications follow the 2026/27 admissions round.",
+      "status": "matched",
+      "confidence": 0.9
+    },
+    {
+      "rule_type": "application_process",
+      "requirement_text": "Application process is clear.",
+      "evidence_text": "Official Aalto page says applicants request grant consideration in the admissions form.",
+      "status": "matched",
+      "confidence": 0.9
+    }
+  ]
+}
+

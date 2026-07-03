@@ -1,0 +1,351 @@
+[
+  {
+    "id": "eligible_01",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "bristol_global_masters",
+      "name": "Bristol Global Masters Scholarship",
+      "provider": "University of Bristol",
+      "country": "United Kingdom",
+      "candidate_url": "https://www.bristol.ac.uk/students/support/finances/scholarships/global-masters/"
+    },
+    "fixture": "eligible_01.json",
+    "expected_verdict": "eligible",
+    "expected_source_type": "official_university"
+  },
+  {
+    "id": "eligible_02",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "daad_ai_masters",
+      "name": "DAAD AI Master's Support",
+      "provider": "DAAD",
+      "country": "Germany",
+      "candidate_url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/ai-masters/"
+    },
+    "fixture": "eligible_02.json",
+    "expected_verdict": "eligible",
+    "expected_source_type": "official_government"
+  },
+  {
+    "id": "eligible_03",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "aalto_international_excellence",
+      "name": "Aalto International Excellence Scholarship",
+      "provider": "Aalto University",
+      "country": "Finland",
+      "candidate_url": "https://www.aalto.fi/en/admission-services/scholarships-and-tuition-fees"
+    },
+    "fixture": "eligible_03.json",
+    "expected_verdict": "eligible",
+    "expected_source_type": "official_university"
+  },
+  {
+    "id": "not_eligible_01",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "edinburgh_home_only_award",
+      "name": "Edinburgh Home Student Award",
+      "provider": "University of Edinburgh",
+      "country": "United Kingdom",
+      "candidate_url": "https://www.ed.ac.uk/student-funding/postgraduate/home-student-award"
+    },
+    "fixture": "not_eligible_01.json",
+    "expected_verdict": "not_eligible",
+    "expected_source_type": "official_university"
+  },
+  {
+    "id": "not_eligible_02",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "bristol_phd_only",
+      "name": "Bristol AI Doctoral Scholarship",
+      "provider": "University of Bristol",
+      "country": "United Kingdom",
+      "candidate_url": "https://www.bristol.ac.uk/students/support/finances/scholarships/ai-doctoral/"
+    },
+    "fixture": "not_eligible_02.json",
+    "expected_verdict": "not_eligible",
+    "expected_source_type": "official_university"
+  },
+  {
+    "id": "not_eligible_03",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "sweden_closed_deadline",
+      "name": "Swedish Institute Technology Scholarship",
+      "provider": "Study in Sweden",
+      "country": "Sweden",
+      "candidate_url": "https://studyinsweden.se/scholarships/technology-scholarship/"
+    },
+    "fixture": "not_eligible_03.json",
+    "expected_verdict": "not_eligible",
+    "expected_source_type": "official_government"
+  },
+  {
+    "id": "unclear_01",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "bristol_country_unclear",
+      "name": "Bristol International Merit Scholarship",
+      "provider": "University of Bristol",
+      "country": "United Kingdom",
+      "candidate_url": "https://www.bristol.ac.uk/students/support/finances/scholarships/international-merit/"
+    },
+    "fixture": "unclear_01.json",
+    "expected_verdict": "unclear",
+    "expected_source_type": "official_university"
+  },
+  {
+    "id": "unclear_02",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "daad_degree_unclear",
+      "name": "DAAD Digital Futures Funding",
+      "provider": "DAAD",
+      "country": "Germany",
+      "candidate_url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/digital-futures/"
+    },
+    "fixture": "unclear_02.json",
+    "expected_verdict": "unclear",
+    "expected_source_type": "official_government"
+  },
+  {
+    "id": "unclear_03",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "aalto_funding_unclear",
+      "name": "Aalto Global Technology Grant",
+      "provider": "Aalto University",
+      "country": "Finland",
+      "candidate_url": "https://www.aalto.fi/en/admission-services/global-technology-grant"
+    },
+    "fixture": "unclear_03.json",
+    "expected_verdict": "unclear",
+    "expected_source_type": "official_university"
+  },
+  {
+    "id": "unverified_01",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "portal_ai_award",
+      "name": "AI Excellence Scholarship Listing",
+      "provider": "Scholarship Portal",
+      "country": "United Kingdom",
+      "candidate_url": "https://www.scholarshipportal.com/scholarships/ai-excellence"
+    },
+    "fixture": "unverified_01.json",
+    "expected_verdict": "unverified",
+    "expected_source_type": "aggregator_lead"
+  },
+  {
+    "id": "unverified_02",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "blog_grant_claim",
+      "name": "International AI Grant Claim",
+      "provider": "Study Blog",
+      "country": "Germany",
+      "candidate_url": "https://studyabroad-example-blog.com/best-ai-scholarships"
+    },
+    "fixture": "unverified_02.json",
+    "expected_verdict": "unverified",
+    "expected_source_type": "aggregator_lead"
+  },
+  {
+    "id": "unverified_03",
+    "profile": {
+      "id": "student_sri_lanka_masters_ai",
+      "nationality": "Sri Lanka",
+      "residence": "Sri Lanka",
+      "fee_status": "international",
+      "degree_level": "Master's",
+      "field": "Artificial Intelligence",
+      "intake": "2026/27",
+      "target_regions": ["United Kingdom", "Germany", "Sweden", "Finland"],
+      "funding_need_percent": 40,
+      "need_living_stipend": true,
+      "academic_level": "upper second equivalent",
+      "work_experience_years": 1,
+      "research_experience": false,
+      "documents_available": ["CV", "transcript"]
+    },
+    "candidate": {
+      "id": "missing_source_award",
+      "name": "Missing Source Award",
+      "provider": "Unknown Provider",
+      "country": "Unknown",
+      "candidate_url": ""
+    },
+    "fixture": "unverified_03.json",
+    "expected_verdict": "unverified",
+    "expected_source_type": "missing_url"
+  }
+]
+

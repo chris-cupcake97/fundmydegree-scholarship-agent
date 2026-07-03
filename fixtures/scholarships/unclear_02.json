@@ -1,0 +1,71 @@
+{
+  "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/digital-futures/",
+  "provider": "DAAD",
+  "page_text": "Official DAAD digital futures scholarship page for 2026/27. International applicants from Sri Lanka may apply for digital technology funding, but the page does not explicitly say whether the award is for Bachelor's, Master's, or doctoral study.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to 2026/27.",
+      "evidence_text": "Official DAAD page states 2026/27 funding.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Sri Lankan applicants are eligible.",
+      "evidence_text": "Official DAAD page lists Sri Lanka.",
+      "status": "matched",
+      "confidence": 0.93
+    },
+    {
+      "rule_type": "residence",
+      "requirement_text": "Applicant may apply from Sri Lanka.",
+      "evidence_text": "Official DAAD page says applicants may apply from their home country.",
+      "status": "matched",
+      "confidence": 0.88
+    },
+    {
+      "rule_type": "fee_status",
+      "requirement_text": "International applicants are eligible.",
+      "evidence_text": "Official DAAD page describes international applicant funding.",
+      "status": "matched",
+      "confidence": 0.88
+    },
+    {
+      "rule_type": "degree_level",
+      "requirement_text": "Degree level must match Master's.",
+      "evidence_text": "",
+      "status": "unclear",
+      "confidence": 0.2
+    },
+    {
+      "rule_type": "field",
+      "requirement_text": "Artificial Intelligence is included.",
+      "evidence_text": "Official DAAD page includes digital technology and AI.",
+      "status": "matched",
+      "confidence": 0.9
+    },
+    {
+      "rule_type": "funding_amount",
+      "requirement_text": "Award covers at least 40 percent funding need.",
+      "evidence_text": "Official DAAD page lists full tuition support and monthly allowance.",
+      "status": "matched",
+      "confidence": 0.93
+    },
+    {
+      "rule_type": "deadline",
+      "requirement_text": "Deadline is open/current.",
+      "evidence_text": "Official DAAD page lists deadline 15 October 2026.",
+      "status": "matched",
+      "confidence": 0.93
+    },
+    {
+      "rule_type": "application_process",
+      "requirement_text": "Application process is clear.",
+      "evidence_text": "Official DAAD page says applicants use the DAAD portal.",
+      "status": "matched",
+      "confidence": 0.9
+    }
+  ]
+}
+

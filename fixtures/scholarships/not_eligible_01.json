@@ -1,0 +1,29 @@
+{
+  "url": "https://www.ed.ac.uk/student-funding/postgraduate/home-student-award",
+  "provider": "University of Edinburgh",
+  "page_text": "Official University of Edinburgh funding page for 2026/27. The Home Student Award is restricted to applicants assessed as UK home fee status. International fee-paying applicants are not eligible.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to 2026/27 entry.",
+      "evidence_text": "Official page states the award is for 2026/27.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Only UK home applicants are eligible.",
+      "evidence_text": "Official page restricts the award to applicants assessed as UK home fee status.",
+      "status": "blocking",
+      "confidence": 0.96
+    },
+    {
+      "rule_type": "fee_status",
+      "requirement_text": "Applicant must have UK home fee status.",
+      "evidence_text": "Official page says international fee-paying applicants are not eligible.",
+      "status": "blocking",
+      "confidence": 0.97
+    }
+  ]
+}
+

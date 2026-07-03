@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "required": ["status", "student_facing_status", "verdict_reason"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["eligible", "unclear", "not_eligible", "unverified"]
+    },
+    "student_facing_status": {
+      "type": "string",
+      "enum": ["Strong Fit", "Needs Clarification", "Not for You", "Unverified Lead"]
+    },
+    "verdict_reason": {
+      "type": "string"
+    },
+    "matched_rules": {
+      "type": "array"
+    },
+    "blocking_rules": {
+      "type": "array"
+    },
+    "unclear_rules": {
+      "type": "array"
+    }
+  }
+}

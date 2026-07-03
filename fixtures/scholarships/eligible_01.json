@@ -1,0 +1,71 @@
+{
+  "url": "https://www.bristol.ac.uk/students/support/finances/scholarships/global-masters/",
+  "provider": "University of Bristol",
+  "page_text": "Official University of Bristol scholarship page for 2026/27 entry. International Master's applicants can apply for the Global Masters Scholarship. Awards cover 50 percent of tuition and include a living stipend. Applications close on 31 May 2026.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to 2026/27 entry.",
+      "evidence_text": "Official page states awards are for 2026/27 entry.",
+      "status": "matched",
+      "confidence": 0.96
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Open to students from any non-UK country.",
+      "evidence_text": "Official page states students from any non-UK country may apply.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "residence",
+      "requirement_text": "Applicant may be resident outside the UK.",
+      "evidence_text": "Official page says overseas applicants are eligible.",
+      "status": "matched",
+      "confidence": 0.92
+    },
+    {
+      "rule_type": "fee_status",
+      "requirement_text": "Applicant must be classed as overseas for fee purposes.",
+      "evidence_text": "Official page requires overseas fee status.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "degree_level",
+      "requirement_text": "Open to taught Master's applicants.",
+      "evidence_text": "Official page lists eligible taught Master's programmes.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "field",
+      "requirement_text": "Artificial Intelligence programme is included.",
+      "evidence_text": "Official page includes Computer Science and Artificial Intelligence taught programmes.",
+      "status": "matched",
+      "confidence": 0.91
+    },
+    {
+      "rule_type": "funding_amount",
+      "requirement_text": "Award covers at least 40 percent funding need.",
+      "evidence_text": "Official page states award covers 50 percent of tuition and includes a living stipend.",
+      "status": "matched",
+      "confidence": 0.93
+    },
+    {
+      "rule_type": "deadline",
+      "requirement_text": "Deadline is open for the intake.",
+      "evidence_text": "Official page states applications close on 31 May 2026.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "application_process",
+      "requirement_text": "Application process is clear.",
+      "evidence_text": "Official page says applicants submit the scholarship form after receiving a programme offer.",
+      "status": "matched",
+      "confidence": 0.94
+    }
+  ]
+}
+

@@ -1,0 +1,71 @@
+{
+  "url": "https://www.bristol.ac.uk/students/support/finances/scholarships/international-merit/",
+  "provider": "University of Bristol",
+  "page_text": "Official University of Bristol scholarship page for 2026/27. International applicants to selected Master's programmes may apply. The country list is referred to as a separate downloadable appendix that is not available in this fixture.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to 2026/27 entry.",
+      "evidence_text": "Official page states 2026/27 entry.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Country eligibility must include Sri Lanka.",
+      "evidence_text": "",
+      "status": "unclear",
+      "confidence": 0.2
+    },
+    {
+      "rule_type": "residence",
+      "requirement_text": "Applicant may reside outside the UK.",
+      "evidence_text": "Official page addresses international applicants.",
+      "status": "matched",
+      "confidence": 0.85
+    },
+    {
+      "rule_type": "fee_status",
+      "requirement_text": "Applicant must be overseas fee status.",
+      "evidence_text": "Official page says overseas fee-paying applicants may apply.",
+      "status": "matched",
+      "confidence": 0.91
+    },
+    {
+      "rule_type": "degree_level",
+      "requirement_text": "Open to Master's applicants.",
+      "evidence_text": "Official page mentions Master's programmes.",
+      "status": "matched",
+      "confidence": 0.91
+    },
+    {
+      "rule_type": "field",
+      "requirement_text": "Artificial Intelligence is included.",
+      "evidence_text": "Official page includes Computer Science programmes.",
+      "status": "matched",
+      "confidence": 0.88
+    },
+    {
+      "rule_type": "funding_amount",
+      "requirement_text": "Award covers at least 40 percent funding need.",
+      "evidence_text": "Official page states the award is 50 percent tuition support.",
+      "status": "matched",
+      "confidence": 0.93
+    },
+    {
+      "rule_type": "deadline",
+      "requirement_text": "Deadline is open/current.",
+      "evidence_text": "Official page lists deadline 30 June 2026.",
+      "status": "matched",
+      "confidence": 0.93
+    },
+    {
+      "rule_type": "application_process",
+      "requirement_text": "Application process is clear.",
+      "evidence_text": "Official page says applicants apply through the scholarship form.",
+      "status": "matched",
+      "confidence": 0.9
+    }
+  ]
+}
+

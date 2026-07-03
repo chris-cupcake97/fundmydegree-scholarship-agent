@@ -1,0 +1,2 @@
+"""ScholarProof package."""
+

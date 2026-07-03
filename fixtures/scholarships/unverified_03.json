@@ -1,0 +1,15 @@
+{
+  "url": "",
+  "provider": "Unknown Provider",
+  "page_text": "A scholarship lead was imported without a source URL. The system cannot verify whether the scholarship is real or whether the rules fit the student.",
+  "rules": [
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Claim says all countries are eligible.",
+      "evidence_text": "No source URL is available.",
+      "status": "matched",
+      "confidence": 0.1
+    }
+  ]
+}
+

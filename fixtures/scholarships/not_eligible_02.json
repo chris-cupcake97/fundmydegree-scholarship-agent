@@ -1,0 +1,29 @@
+{
+  "url": "https://www.bristol.ac.uk/students/support/finances/scholarships/ai-doctoral/",
+  "provider": "University of Bristol",
+  "page_text": "Official University of Bristol doctoral funding page for 2026/27. Applicants must hold an offer for a PhD in Artificial Intelligence. Master's applicants are not eligible for this doctoral scholarship.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to 2026/27 entry.",
+      "evidence_text": "Official page states 2026/27 doctoral funding.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "International applicants may apply.",
+      "evidence_text": "Official page says international PhD applicants may apply.",
+      "status": "matched",
+      "confidence": 0.91
+    },
+    {
+      "rule_type": "degree_level",
+      "requirement_text": "Applicant must be entering a PhD.",
+      "evidence_text": "Official page states applicants must hold a PhD offer.",
+      "status": "blocking",
+      "confidence": 0.97
+    }
+  ]
+}
+

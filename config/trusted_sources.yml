@@ -1,0 +1,29 @@
+official_examples:
+  universities:
+    - bristol.ac.uk
+    - ed.ac.uk
+    - aalto.fi
+  government_and_public_authorities:
+    - daad.de
+    - studyinsweden.se
+    - universityadmissions.se
+    - gov.uk
+    - europa.eu
+
+official_source_rules:
+  - Domain is listed in this file.
+  - Domain is a known government or public scholarship authority.
+  - Domain is linked from a verified university scholarship or admissions page.
+  - Domain belongs to the named scholarship foundation or provider itself.
+
+aggregator_examples:
+  categories:
+    - generic scholarship blogs
+    - study abroad portals
+    - SEO scholarship listing websites
+    - scholarship listicles
+
+aggregator_policy:
+  discovery_allowed: true
+  proof_allowed: false
+  note: Aggregator sites are discovery leads only and must never be used as proof for eligibility.

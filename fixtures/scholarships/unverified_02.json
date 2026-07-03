@@ -1,0 +1,22 @@
+{
+  "url": "https://studyabroad-example-blog.com/best-ai-scholarships",
+  "provider": "Study Blog",
+  "page_text": "A study abroad blog post lists several awards and says an AI grant is open to everyone. The post does not link to an official scholarship office or provider page.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Blog claims the award is current.",
+      "evidence_text": "Blog post says current award.",
+      "status": "matched",
+      "confidence": 0.4
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Blog claims all nationalities.",
+      "evidence_text": "Blog post says everyone can apply.",
+      "status": "matched",
+      "confidence": 0.4
+    }
+  ]
+}
+

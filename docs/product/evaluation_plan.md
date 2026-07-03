@@ -1,0 +1,55 @@
+# ScholarProof Evaluation Plan
+
+## Hard Gate
+
+```text
+false_eligible_count = 0
+```
+
+## Eval Files
+
+To create in the implementation phase:
+
+- `evals/eval_cases.json`
+- `evals/run_evals.py`
+- `fixtures/scholarships/`
+
+## Minimum Cases
+
+At least 12 eval cases:
+
+- 3 eligible.
+- 3 not eligible.
+- 3 unclear.
+- 3 unverified.
+
+Each eval case includes:
+
+- Student profile.
+- Scholarship candidate.
+- Source text fixture.
+- Expected verdict.
+- Expected source classification.
+- Required evidence fields.
+- Expected tool trajectory.
+
+## Required Trajectory
+
+1. `fetch_page`
+2. `classify_source`
+3. `extract_rules`
+4. `match_profile`
+5. `generate_verdict`
+6. `write_audit_log`
+
+## Automatic Failure Conditions
+
+- `eligible` without `source_url`.
+- `eligible` without official source.
+- `eligible` with missing required evidence.
+- Aggregator used as proof.
+- Verdict generated before source classification.
+
+## Offline Demo
+
+Fixture mode is required so the demo works without live web search.

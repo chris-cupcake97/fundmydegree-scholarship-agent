@@ -1,0 +1,71 @@
+{
+  "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/ai-masters/",
+  "provider": "DAAD",
+  "page_text": "Official DAAD scholarship page for the 2026/27 academic year. International students from Sri Lanka may apply for Master's study in AI-related programmes in Germany. Funding includes full tuition support and monthly living allowance. Deadline is 15 October 2026.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to the 2026/27 academic year.",
+      "evidence_text": "Official DAAD page states 2026/27 academic year.",
+      "status": "matched",
+      "confidence": 0.96
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Sri Lankan nationals are eligible.",
+      "evidence_text": "Official DAAD page lists Sri Lanka among eligible countries.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "residence",
+      "requirement_text": "Applicants may reside in their home country at application time.",
+      "evidence_text": "Official DAAD page says applicants normally apply from their country of residence.",
+      "status": "matched",
+      "confidence": 0.9
+    },
+    {
+      "rule_type": "fee_status",
+      "requirement_text": "International fee status is accepted.",
+      "evidence_text": "Official DAAD page describes the scholarship for international students.",
+      "status": "matched",
+      "confidence": 0.91
+    },
+    {
+      "rule_type": "degree_level",
+      "requirement_text": "Open to Master's applicants.",
+      "evidence_text": "Official DAAD page says Master's study in Germany.",
+      "status": "matched",
+      "confidence": 0.96
+    },
+    {
+      "rule_type": "field",
+      "requirement_text": "Artificial Intelligence and data science are eligible fields.",
+      "evidence_text": "Official DAAD page includes AI-related programmes.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "funding_amount",
+      "requirement_text": "Award covers at least 40 percent funding need.",
+      "evidence_text": "Official DAAD page lists full tuition support and monthly living allowance.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "deadline",
+      "requirement_text": "Deadline is open/current.",
+      "evidence_text": "Official DAAD page lists deadline 15 October 2026.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "application_process",
+      "requirement_text": "Application process is clear.",
+      "evidence_text": "Official DAAD page instructs applicants to submit through the DAAD portal with academic documents.",
+      "status": "matched",
+      "confidence": 0.93
+    }
+  ]
+}
+

@@ -1,0 +1,71 @@
+{
+  "url": "https://www.aalto.fi/en/admission-services/scholarships-and-tuition-fees",
+  "provider": "Aalto University",
+  "page_text": "Official Aalto University admissions page for 2026/27 scholarships and tuition fees. Non-EU/EEA Master's applicants, including applicants from Sri Lanka, may apply. Artificial Intelligence programmes are included. Awards cover 50 to 100 percent of tuition. The application deadline is tied to the Master's admissions round.",
+  "rules": [
+    {
+      "rule_type": "current_cycle",
+      "requirement_text": "Scholarship applies to 2026/27 admissions.",
+      "evidence_text": "Official Aalto page states 2026/27 scholarships and tuition fees.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "nationality",
+      "requirement_text": "Non-EU/EEA applicants are eligible.",
+      "evidence_text": "Official Aalto page says non-EU/EEA applicants may apply for scholarships.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "residence",
+      "requirement_text": "Applicant may reside outside Finland.",
+      "evidence_text": "Official Aalto page addresses international applicants applying through admissions.",
+      "status": "matched",
+      "confidence": 0.88
+    },
+    {
+      "rule_type": "fee_status",
+      "requirement_text": "Applicant is liable for tuition fees.",
+      "evidence_text": "Official Aalto page says scholarships are for students liable for tuition fees.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "degree_level",
+      "requirement_text": "Open to Master's applicants.",
+      "evidence_text": "Official Aalto page covers Master's admissions scholarships.",
+      "status": "matched",
+      "confidence": 0.94
+    },
+    {
+      "rule_type": "field",
+      "requirement_text": "Artificial Intelligence programme is included.",
+      "evidence_text": "Official Aalto page lists technology and Artificial Intelligence Master's programmes in the scholarship scope.",
+      "status": "matched",
+      "confidence": 0.9
+    },
+    {
+      "rule_type": "funding_amount",
+      "requirement_text": "Award covers at least 40 percent funding need.",
+      "evidence_text": "Official Aalto page states awards cover 50 to 100 percent of tuition.",
+      "status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "rule_type": "deadline",
+      "requirement_text": "Deadline is open/current.",
+      "evidence_text": "Official Aalto page ties the scholarship application to the 2026/27 Master's admissions round.",
+      "status": "matched",
+      "confidence": 0.91
+    },
+    {
+      "rule_type": "application_process",
+      "requirement_text": "Application process is clear.",
+      "evidence_text": "Official Aalto page says applicants request scholarship consideration inside the Master's admissions form.",
+      "status": "matched",
+      "confidence": 0.93
+    }
+  ]
+}
+
