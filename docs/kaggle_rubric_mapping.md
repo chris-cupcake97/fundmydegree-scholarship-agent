@@ -11,7 +11,7 @@ Source of truth:
 | Kaggle Concept | ScholarProof Mapping | Demonstration |
 |---|---|---|
 | Agent / multi-agent system using ADK | Root Orchestrator Agent + Finder Agent + Verifier Agent. | Code |
-| MCP Server | MCP-style tool server for search, fetch, source classification, rule extraction, profile matching, verdict generation, saving, and audit logging. | Code |
+| MCP Server | MCP-style tool server in `scholarproof/mcp_server/` for search, fetch, source classification, rule extraction, profile matching, verdict generation, saving, audit logging, and prompt-injection detection. | Code |
 | Antigravity | Demo workflow showing repo inspection, UI issue fixing, diff review, local run, and browser testing. | Video |
 | Security features | Official-source gate, no auto-send, no auto-submit, prompt-injection detection, no sensitive uploads, audit logs. | Code and video |
 | Deployability | Dockerfile, `.env.example`, `/health`, deployment docs, fixture demo mode. | Video and docs |
@@ -64,7 +64,7 @@ Strong implementation evidence:
 - Verification engine before UI polish.
 - Conservative verdict policy.
 - Structured data models.
-- MCP-style tool layer.
+- MCP-style tool layer in `scholarproof/mcp_server/` with a registry, manifest, and smoke test.
 - ADK agent layer.
 - Fixture mode for reliable demo.
 - Eval runner with `false_eligible_count = 0`.

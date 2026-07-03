@@ -103,7 +103,7 @@ flowchart TD
 ## Setup
 
 The current implementation includes the planning docs, fixture-backed core verification engine,
-eval harness, and a FastAPI backend API in offline fixture mode.
+eval harness, FastAPI backend API, and MCP-style tool layer in offline fixture mode.
 
 Install API dependencies:
 
@@ -147,6 +147,42 @@ Run the API smoke test:
 ```bash
 python scripts/smoke_api.py
 ```
+
+Run the MCP-style tool smoke test:
+
+```bash
+python scripts/smoke_tools.py
+```
+
+List available tools:
+
+```bash
+python -m scholarproof.mcp_server list
+```
+
+Call one tool from the command line:
+
+```bash
+python -m scholarproof.mcp_server call classify_source fixture_id=eligible_01
+```
+
+## MCP-Style Tool Layer
+
+The tool layer lives in `scholarproof/mcp_server/` and exposes structured JSON tools for agents:
+
+- `search_scholarships`
+- `fetch_page`
+- `classify_source`
+- `extract_rules`
+- `match_profile`
+- `generate_verdict`
+- `save_result`
+- `write_audit_log`
+- `detect_prompt_injection`
+
+This demonstrates the Kaggle MCP Server / tool interoperability concept by giving agents a bounded
+tool surface with manifest metadata, input schemas, output schemas, and safety notes. The current
+limitation is intentional: tools run in fixture/offline mode only, with no live web search.
 
 ## Evaluation
 
