@@ -102,19 +102,50 @@ flowchart TD
 
 ## Setup
 
-Implementation has not started yet. This first task creates the repo scaffold and planning documents only.
+The current implementation includes the planning docs, fixture-backed core verification engine,
+eval harness, and a FastAPI backend API in offline fixture mode.
 
-Planned commands:
+Install API dependencies:
 
 ```bash
-# Run backend
+python -m pip install -r requirements.txt
+```
+
+Run the backend API:
+
+```bash
 python -m scholarproof
+```
 
-# Run evals
+The API starts at:
+
+```text
+http://127.0.0.1:8000
+```
+
+Useful API routes:
+
+- `GET /health`
+- `POST /api/profile`
+- `GET /api/profile/{profile_id}`
+- `POST /api/search-scholarships`
+- `POST /api/verify-scholarship`
+- `GET /api/evidence/{verification_id}`
+- `POST /api/draft-email`
+- `POST /api/save-result`
+- `GET /api/saved-results/{profile_id}`
+- `GET /api/audit/{verification_id}`
+
+Run evals:
+
+```bash
 python evals/run_evals.py
+```
 
-# Run Docker
-docker build -t scholarproof .
+Run the API smoke test:
+
+```bash
+python scripts/smoke_api.py
 ```
 
 ## Evaluation
