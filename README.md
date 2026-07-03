@@ -143,6 +143,12 @@ cd scholarproof/ui
 npm run build
 ```
 
+Run the deployment smoke test after building the frontend:
+
+```bash
+python -B scripts/smoke_deploy.py
+```
+
 Hard eval gate:
 
 ```text
@@ -243,6 +249,32 @@ Key controls:
 - Fetched pages treated as untrusted data.
 - Draft-only clarification emails.
 - Audit logs for verification steps.
+
+## Deployment
+
+ScholarProof can run as a single container that serves both the FastAPI backend and the built React/Vite frontend.
+
+Build:
+
+```bash
+docker build -t scholarproof .
+```
+
+Run:
+
+```bash
+docker run --rm -p 8080:8080 scholarproof
+```
+
+Open:
+
+```text
+http://127.0.0.1:8080/
+http://127.0.0.1:8080/docs
+http://127.0.0.1:8080/health
+```
+
+Cloud Run notes are in `deploy/cloud-run.md`.
 
 ## Limitations
 

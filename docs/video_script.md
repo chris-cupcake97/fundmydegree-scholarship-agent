@@ -83,6 +83,7 @@ false_eligible_count = 0
 Show:
 
 - `/health`
+- Dockerfile.
 - `.env.example`.
 - Deployment docs.
 - Fixture mode for reliable demo.

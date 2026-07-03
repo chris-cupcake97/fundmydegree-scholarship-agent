@@ -6,25 +6,37 @@ ScholarProof must be easy to run locally, easy to evaluate, and clear enough to 
 
 ## Current Deployment Readiness
 
-- `.env.example`
-- `/health` endpoint
-- README setup instructions
-- Fixture/offline demo mode
-- Backend and frontend build checks
+- Dockerfile.
+- Optional Docker Compose file.
+- `.env.example`.
+- `/health` endpoint.
+- README setup instructions.
+- Fixture/offline demo mode.
+- Backend, tool, agent, eval, frontend, and deployment smoke checks.
+- Single-container serving for backend API and built frontend UI.
 
-Docker packaging and Cloud Run deployment are planned for the deployment phase. They are not required for the current local fixture-mode MVP.
+## Runtime Shape
+
+The deployment container serves:
+
+- React/Vite frontend from `/`.
+- FastAPI docs from `/docs`.
+- API routes from `/api/*`.
+- Health check from `/health`.
+
+The frontend uses same-origin API calls in deployed builds. During local Vite development, it calls `http://127.0.0.1:8000`.
 
 ## Environment Variables
 
 Use `.env.example` for names only. Do not commit real values.
 
-Planned variables:
-
 ```text
-APP_ENV=development
+APP_ENV=production
 FIXTURE_MODE=true
 DATABASE_URL=sqlite:///data/scholarproof.db
 LOG_LEVEL=info
+HOST=0.0.0.0
+PORT=8080
 ```
 
 If live APIs are added later, add only placeholder names:
@@ -34,23 +46,61 @@ SEARCH_API_KEY=
 MODEL_API_KEY=
 ```
 
-## Local Run Plan
-
-Planned commands:
+## Local Backend Run
 
 ```bash
 python -m scholarproof
-python evals/run_evals.py
 ```
 
-## Future Docker Run Plan
+Default local backend:
 
-Planned commands:
+```text
+http://127.0.0.1:8000
+```
+
+## Local Frontend Run
+
+```bash
+cd scholarproof/ui
+npm install
+npm run dev
+```
+
+Default local frontend:
+
+```text
+http://127.0.0.1:5173/
+```
+
+## Container Build
 
 ```bash
 docker build -t scholarproof .
-docker run --env-file .env -p 8080:8080 scholarproof
 ```
+
+## Container Run
+
+```bash
+docker run --rm -p 8080:8080 scholarproof
+```
+
+Open:
+
+```text
+http://127.0.0.1:8080/
+http://127.0.0.1:8080/docs
+http://127.0.0.1:8080/health
+```
+
+## Docker Compose
+
+```bash
+docker compose up --build
+```
+
+## Cloud Run
+
+Cloud Run commands are documented in `deploy/cloud-run.md`.
 
 ## Health Check
 
@@ -71,8 +121,19 @@ Expected response:
 }
 ```
 
+## Pre-Deployment Checks
+
+```bash
+python -B evals/run_evals.py
+python -B scripts/smoke_api.py
+python -B scripts/smoke_tools.py
+python -B scripts/smoke_agents.py
+cd scholarproof/ui
+npm run build
+cd ../..
+python -B scripts/smoke_deploy.py
+```
+
 ## Demo Reliability
 
-The app must run in fixture mode without live web search.
-
-Live search can be optional, but it must not be required for Kaggle demo.
+The app runs in fixture mode without live web search. Live search can be optional later, but it must not be required for the Kaggle demo.

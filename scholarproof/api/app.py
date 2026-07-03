@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any, Callable
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from . import services
 from .schemas import (
@@ -93,3 +95,9 @@ def get_saved_results(profile_id: str) -> dict[str, Any]:
 @app.get("/api/audit/{verification_id}")
 def get_audit(verification_id: str) -> dict[str, Any]:
     return _call(services.get_audit, verification_id)
+
+
+UI_DIST = Path(__file__).resolve().parents[1] / "ui" / "dist"
+
+if UI_DIST.exists():
+    app.mount("/", StaticFiles(directory=UI_DIST, html=True), name="scholarproof-ui")

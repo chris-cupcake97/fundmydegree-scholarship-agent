@@ -1,0 +1,10 @@
+services:
+  scholarproof:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      APP_ENV: production
+      FIXTURE_MODE: "true"
+      HOST: 0.0.0.0
+      PORT: "8080"
