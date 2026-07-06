@@ -26,7 +26,7 @@ The worst failure is a false `eligible` or false "Strong Match".
 
 ## Build Priorities
 
-1. Build the verification engine before UI polish.
+1. Keep the verification engine behavior stable.
 2. Keep false eligible count at 0.
 3. Use fixture mode for a reliable offline demo.
 4. Keep code simple and explainable.
@@ -34,16 +34,16 @@ The worst failure is a false `eligible` or false "Strong Match".
 6. Run evals after changing verifier logic.
 7. Summarize changed files after every task.
 
-## Required Concepts
+## Required Project Layers
 
-Demonstrate all six Kaggle course concepts:
+Preserve these layers:
 
-- Agent / multi-agent system using ADK.
-- MCP server or MCP-style tool server.
-- Antigravity usage.
-- Security features.
-- Deployability.
+- Agent / multi-agent workflow.
+- MCP-style tool server.
 - Agent Skills.
+- Security checks.
+- Deployability.
+- Fixture-based evaluation.
 
 ## Agent Architecture Constraint
 

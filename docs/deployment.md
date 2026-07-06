@@ -2,7 +2,7 @@
 
 ## Goals
 
-FundMyDegree must be easy to run locally, easy to evaluate, and clear enough to deploy to Cloud Run or an equivalent service.
+FundMyDegree must be easy to run locally, easy to evaluate, and clear enough to deploy to Cloud Run or an equivalent container service.
 
 ## Current Deployment Readiness
 
@@ -74,13 +74,13 @@ http://127.0.0.1:5173/
 ## Container Build
 
 ```bash
-docker build -t fundmydegree-agent .
+docker build -t fundmydegree-scholarship-agent .
 ```
 
 ## Container Run
 
 ```bash
-docker run --rm -p 8080:8080 fundmydegree-agent
+docker run --rm -p 8080:8080 fundmydegree-scholarship-agent
 ```
 
 Open:
@@ -120,8 +120,6 @@ Expected response:
 }
 ```
 
-The `service` value is an internal implementation identifier, not the student-facing product name.
-
 ## Pre-Deployment Checks
 
 ```bash
@@ -136,4 +134,4 @@ npm run build
 
 ## Demo Reliability
 
-The app runs in fixture mode without live web search. Live search can be optional later, but it must not be required for the Kaggle demo.
+The app runs in fixture mode without live web search. Live search can be optional later, but it must not be required for the current demo.

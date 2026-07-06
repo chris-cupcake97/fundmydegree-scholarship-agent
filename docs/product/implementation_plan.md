@@ -1,6 +1,6 @@
 # FundMyDegree Implementation Plan
 
-This document is planning-only. Do not implement full app logic in the scaffold phase.
+This document records the product build order. It is not a feature backlog for expanding the scope.
 
 ## 1. Recommended Repo Structure
 
@@ -34,7 +34,7 @@ Build verification before UI polish:
 8. Frontend UI.
 9. Security polish.
 10. Deployability.
-11. Kaggle polish.
+11. Public repo polish.
 
 ## 3. Data Models
 
@@ -100,7 +100,7 @@ Hard gate:
 false_eligible_count = 0
 ```
 
-Use at least 12 fixture cases across eligible, not eligible, unclear, and unverified.
+Use fixture cases across eligible, not eligible, unclear, and unverified.
 
 ## 9. Build Order
 
@@ -114,7 +114,7 @@ Use at least 12 fixture cases across eligible, not eligible, unclear, and unveri
 8. Phase 8: Frontend UI.
 9. Phase 9: Security polish.
 10. Phase 10: Deployability.
-11. Phase 11: Kaggle polish.
+11. Phase 11: Public repo polish.
 
 ## 10. Risks And Scope Limits
 

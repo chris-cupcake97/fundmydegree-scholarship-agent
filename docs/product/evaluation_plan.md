@@ -8,15 +8,13 @@ false_eligible_count = 0
 
 ## Eval Files
 
-To create in the implementation phase:
-
 - `evals/eval_cases.json`
 - `evals/run_evals.py`
 - `fixtures/scholarships/`
 
-## Minimum Cases
+## Cases
 
-At least 12 eval cases:
+The current fixture set has 12 eval cases:
 
 - 3 eligible.
 - 3 not eligible.

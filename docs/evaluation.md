@@ -18,7 +18,7 @@ A false `eligible` verdict is the worst failure.
 
 ## Minimum Eval Cases
 
-At least 12 cases:
+The current eval harness uses 12 fixture cases:
 
 - 3 eligible.
 - 3 not eligible.
@@ -46,6 +46,8 @@ Every verification should include:
 5. `generate_verdict`
 6. `write_audit_log`
 
+The agent smoke test also verifies prompt-injection detection in the verifier path.
+
 ## Automatic Failures
 
 Fail if:
@@ -70,6 +72,6 @@ The eval runner prints:
 
 ## Fixture Mode
 
-Live web search may fail during demo. Fixture mode is required so the demo works offline and repeatably.
+Live web search may vary between runs. Fixture mode is required so the demo works offline and repeatably.
 
-Live search can be added later, but evals must run against fixtures.
+Live search can be added later, but evals must remain reproducible against fixtures.

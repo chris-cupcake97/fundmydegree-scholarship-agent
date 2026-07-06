@@ -1,110 +1,135 @@
 # FundMyDegree
 
-Find scholarships that actually fit you.
+**Find scholarships that actually fit you.**
 
-FundMyDegree helps international students find scholarships that actually fit their profile.
+FundMyDegree is a scholarship matching and fit-checking prototype for international students.
 
-I built this because scholarship discovery is not just about finding a long list of opportunities. Students often lose days on scholarships that look promising but are outdated, unclear, unofficial, or not applicable to their country, degree level, subject, or funding need. FundMyDegree focuses on a smaller but more useful question:
+I built this from a problem I have personally faced as a Sri Lankan graduate trying to find a realistic path to study abroad. Scholarships can decide whether studying abroad is even possible, but finding the right ones is rarely as simple as searching a list. For the past two years, I have spent time opening scholarship links, university pages, and country-by-country funding pages, only to later realize that Sri Lankan students were not eligible, my degree level did not match, the scholarship was outdated, the funding was not enough, or the rules were too unclear to trust.
+
+The question I wanted help answering was simple:
 
 ```text
 Is this scholarship worth my time?
 ```
 
-The app lets a student create a lightweight study profile, view scholarship matches, open a match, and see what fits, what needs confirmation, and what may not be worth applying for.
+FundMyDegree is my answer to that question. It does not try to be a giant global scholarship directory. It focuses on a smaller, more useful workflow: take a student profile, compare it against scholarship evidence, and explain what looks like a fit, what needs confirmation, and what may not be worth pursuing.
 
-This is a Kaggle AI Agents capstone prototype. It uses fixture/offline data for a reproducible demo. It does not claim to find every scholarship in the world.
+This is a Kaggle AI Agents capstone prototype. It uses fixture/offline demo data so the project can be reviewed and tested reproducibly.
 
-## Why I built this
+## Why I Built This
 
-International students do not just need more scholarship links. They need to know which scholarships fit their actual profile.
+Most scholarship search tools give students more links. More links are useful only if the student can quickly understand whether those opportunities actually apply to them.
 
-Aggregator sites and random scholarship lists can be useful starting points, but they often blur together official opportunities, outdated pages, vague eligibility rules, and listings that do not apply to a student's country, degree level, field, or funding need. That creates a lot of false hope and wasted effort.
+As an international student from Sri Lanka, the painful part has not been only finding scholarship names. It has been checking the fine print: nationality rules, residence rules, degree level, subject restrictions, funding coverage, deadlines, and whether the source is official. A scholarship can look perfect in a search result and still be a poor use of time once the eligibility rules are checked properly.
 
-FundMyDegree focuses on matching plus evidence. It is not trying to make blind recommendations. It tries to show why a scholarship looks relevant, what still needs to be confirmed, and when the safer answer is not to treat it as a fit yet.
+FundMyDegree was built to make that uncertainty visible earlier. It is meant to help a student slow down at the right moment and ask: does this opportunity really fit my profile, or do I need to confirm something before investing hours into it?
 
-## What the app does
+## What FundMyDegree Does
 
-1. The student fills a lightweight study profile.
-2. FundMyDegree shows scholarship matches.
-3. The student opens a scholarship.
-4. The agent checks source evidence and profile fit.
-5. The app groups results as Best Matches, Need to Confirm, Not for You, or Couldn't Verify Yet.
-6. If something is unclear, the app can prepare an Ask to confirm draft.
-7. The email is draft-only. It is never sent automatically.
+- The student fills a lightweight study profile.
+- The system shows scholarship matches from fixture/offline demo data.
+- The student opens a scholarship to see a fit check.
+- The system explains what fits the profile, what still needs confirmation, and what may block eligibility.
+- The student can save a scholarship for later.
+- If the result is unclear, the system can draft a clarification email.
+- The app never sends the email automatically.
 
-## What makes it different
+## Why This Is Different From A Normal Scholarship List
 
-Most scholarship tools stop at discovery. FundMyDegree adds a fit-checking layer.
-
-It does not just ask:
+Most tools stop at discovery. They help answer:
 
 ```text
-Does this scholarship exist?
+What scholarships exist?
 ```
 
-It asks:
+FundMyDegree adds a fit-checking layer. It tries to answer:
 
 ```text
-Does this scholarship look relevant for this student, based on available evidence?
+Is this scholarship likely worth this student's time?
 ```
 
-That distinction matters. A scholarship can exist and still be the wrong use of a student's time. FundMyDegree keeps uncertainty visible instead of hiding it behind a confident-looking recommendation.
+That difference matters because an opportunity can be real but still not fit a specific student. FundMyDegree keeps the reasoning visible and uses conservative labels instead of pretending every match is certain.
 
-## Demo flow
+## Demo Flow
 
-1. Open the app.
-2. Complete My Profile.
-3. Go to My Matches.
-4. Open a scholarship match.
-5. Review what matches, what needs confirmation, and what may stop the student applying.
-6. Save the scholarship or copy an Ask to confirm draft.
+1. Complete My Profile.
+2. View My Matches.
+3. Open a scholarship.
+4. Review why it matches or does not match.
+5. Save it or use Ask to confirm for unclear cases.
 
-## How the agent works
+## System Diagrams
+
+### High-Level System Architecture
+
+![High-level system architecture](docs/assets/fundmydegree-system-architecture.png)
+
+This view shows how the student UI, FastAPI backend, agent layer, MCP-style tools, core verifier, fixtures, and eval harness fit together.
+
+### Conceptual Data Model
+
+![Conceptual data model](docs/assets/fundmydegree-conceptual-data-model.png)
+
+This view shows the main records used by the prototype: student profiles, scholarship candidates, verification results, evidence, audit events, saved results, and clarification drafts.
+
+### Deployment And Runtime View
+
+![Deployment and runtime view](docs/assets/fundmydegree-deployment-runtime-view.png)
+
+This view shows the local and container runtime shape: a React/Vite frontend, FastAPI backend, fixture data, health/docs endpoints, and smoke checks.
+
+## How The Agent Works
+
+The workflow is intentionally narrow:
 
 ```text
 Student profile
-  |
-  v
-Finder Agent finds candidate scholarships
-  |
-  v
-Tool layer loads fixture scholarship data
-  |
-  v
-Verifier Agent checks source, rules, and profile fit
-  |
-  v
-Conservative verdict engine chooses the safest status
-  |
-  v
-Frontend shows the result in student-friendly language
+-> Finder Agent identifies candidate scholarships
+-> Tool layer loads scholarship and source data
+-> Verifier Agent checks source evidence and eligibility rules
+-> Conservative verdict engine chooses the safest status
+-> UI explains the result in student-friendly language
 ```
 
-The detailed architecture lives in `docs/` for anyone who wants deeper implementation notes.
+The Root Orchestrator coordinates the flow. It does not invent eligibility decisions.
 
-## Course concepts demonstrated
+The Finder Agent searches fixture scholarship data and returns structured candidates. It never decides eligibility and never labels anything as a strong match.
 
-- Agent / multi-agent workflow: Root Orchestrator Agent, Finder Agent, Verifier Agent, and clarification email wrapper.
-- MCP-style tool layer: tools such as `search_scholarships`, `classify_source`, `extract_rules`, `match_profile`, `generate_verdict`, and `detect_prompt_injection`.
-- Agent Skills: skill folders for source checking, rule extraction, conservative verdicting, and clarification email drafting.
-- Security features: no auto-send, no auto-submit, no sensitive document upload, prompt-injection detection, official-source gate, and conservative fit decisions.
-- Evaluation: golden fixture cases and eval runner with `false_eligible_count = 0`.
-- Deployability: FastAPI backend, React/Vite frontend, Dockerfile, Docker Compose, `/health` endpoint, and deployment smoke test.
-- Antigravity: demo notes and workflow documentation in `docs/`.
+The Verifier Agent checks the candidate through the tool sequence: fetch source, classify source, detect prompt injection, extract rules, match the student profile, generate a conservative verdict, and write an audit log.
 
-## Safety decisions
+The clarification helper can draft an email only when the status is unclear. It returns a draft for the student to review and copy. It never sends email.
 
-FundMyDegree is intentionally limited in what it can do.
+## Safety Decisions
 
-- It does not upload passports, transcripts, bank statements, offer letters, or other sensitive student documents.
-- The document section is only a checklist.
-- It never sends emails automatically.
-- It never submits applications.
-- Aggregator-style sources are treated as leads, not proof.
-- If a required rule is missing or unclear, the app prefers Need to Confirm instead of guessing.
-- The hard eval target is `false_eligible_count = 0`.
+- No automatic email sending.
+- No application submission or portal autofill.
+- No passport, bank statement, transcript, or offer-letter upload.
+- The document section is a checklist only.
+- Aggregator leads are not treated as proof.
+- Fetched page text is treated as untrusted content, not instructions.
+- Eligible is impossible without official source evidence.
+- Missing key evidence becomes Need to Confirm or Couldn't Verify Yet.
+- The hard evaluation target is `false_eligible_count = 0`.
 
-## Current limitations
+The guiding rule is:
+
+```text
+Unclear beats wrong.
+```
+
+## Course Concepts Demonstrated
+
+For the capstone submission, FundMyDegree demonstrates the required concepts through the working system rather than by storing external course artifacts in the repo:
+
+- Agent / multi-agent workflow: Root Orchestrator, Finder, Verifier, and clarification helper.
+- MCP-style tool layer: structured tools under `fundmydegree/mcp_server/`.
+- Agent Skills: focused skills under `.agent/skills/`.
+- Security features: official-source gate, prompt-injection detection, no auto-send, no auto-submit, no sensitive uploads, audit logs.
+- Evaluation: fixture-based evals with `false_eligible_count = 0`.
+- Deployability: FastAPI, React/Vite, Docker, Docker Compose, `/health`, and deployment smoke checks.
+- Antigravity: development workflow evidence can be shown in the demo process without keeping unrelated image dumps in the public repository.
+
+## Current Limitations
 
 - Fixture/offline demo mode only.
 - No live global scholarship search yet.
@@ -112,19 +137,19 @@ FundMyDegree is intentionally limited in what it can do.
 - No persistent database yet.
 - No payment or subscription system.
 - No guarantee of admission, funding, eligibility, or scholarship success.
-- Final decisions belong to universities, governments, or scholarship providers.
+- Final decisions still belong to the scholarship provider, university, or funding body.
 
-## Tech stack
+## Tech Stack
 
-- Frontend: React + Vite
-- Backend: FastAPI
-- Core logic: Python
-- Agent layer: ADK-style orchestrator and specialist agents
-- Tool layer: MCP-style Python tools
-- Evaluation: Python fixture-based eval runner
-- Deployment: Docker
+- Frontend: React + Vite.
+- Backend: FastAPI.
+- Core logic: Python data models, source classification, rule extraction, profile matching, and conservative verdicting.
+- Agent layer: ADK-style Python agent classes.
+- Tool layer: MCP-style Python tool registry and structured tool outputs.
+- Evaluation: fixture-based Python eval runner and smoke tests.
+- Deployment: Docker, Docker Compose, and single-container static frontend plus API serving.
 
-## Run locally
+## Run Locally
 
 Create and activate a virtual environment:
 
@@ -156,7 +181,7 @@ Run the backend:
 python -m fundmydegree
 ```
 
-Backend docs:
+Open the backend docs:
 
 ```text
 http://127.0.0.1:8000/docs
@@ -170,7 +195,7 @@ npm install
 npm run dev
 ```
 
-Frontend URL:
+Open the frontend:
 
 ```text
 http://127.0.0.1:5173/
@@ -228,17 +253,18 @@ Expected key result:
 false_eligible_count = 0
 ```
 
-## Project structure
+## Project Structure
 
 - `fundmydegree/ui/` - React/Vite student UI.
-- `fundmydegree/api/` - FastAPI backend.
-- `fundmydegree/agents/` - Root Orchestrator, Finder, Verifier, and clarification email wrapper.
-- `fundmydegree/mcp_server/` - MCP-style tool registry and tools.
-- `fundmydegree/core/` - source checking, rule matching, verdict policy, and shared models.
-- `fixtures/` - offline scholarship fixtures for the demo.
+- `fundmydegree/api/` - FastAPI backend routes and services.
+- `fundmydegree/agents/` - Root Orchestrator, Finder, Verifier, and clarification helper.
+- `fundmydegree/mcp_server/` - MCP-style tool registry and tool implementations.
+- `fundmydegree/core/` - trusted source checks, rule matching, verdict policy, and shared models.
+- `.agent/skills/` - focused agent skill instructions.
+- `fixtures/` - offline scholarship fixtures.
 - `evals/` - golden eval cases and eval runner.
 - `scripts/` - smoke tests.
-- `docs/` - architecture, security, deployment, evaluation, and Kaggle notes.
+- `docs/` - system architecture, security, evaluation, deployment, and product notes.
 - `Dockerfile` and `docker-compose.yml` - containerized demo setup.
 
 ## License

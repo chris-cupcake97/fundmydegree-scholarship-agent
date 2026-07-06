@@ -1,24 +1,23 @@
 # Architecture
 
-## Overview
+FundMyDegree is a fixture-first scholarship matching and fit-checking prototype for international students.
 
-Product name: FundMyDegree.
+The system is intentionally small:
 
-```mermaid
-flowchart TD
-    UI["Student UI"] --> API["Backend API"]
-    API --> ROOT["Root Orchestrator Agent"]
-    ROOT --> FINDER["Finder Agent"]
-    ROOT --> VERIFIER["Verifier Agent"]
-    ROOT --> EMAIL["Clarification Email Skill"]
-    FINDER --> TOOLS["MCP-style Tool Server"]
-    VERIFIER --> TOOLS
-    EMAIL --> TOOLS
-    TOOLS --> STORE["In-memory Fixture Store"]
-    TOOLS --> LOGS["Audit Logs"]
-    TOOLS --> FIXTURES["Fixture Scholarship Data"]
-    API --> EVALS["Evaluation Runner"]
-```
+1. A student fills My Profile in the React/Vite UI.
+2. The FastAPI backend receives profile, search, verify, save, and draft-email requests.
+3. The Root Orchestrator calls the Finder Agent and Verifier Agent.
+4. The MCP-style tool layer exposes structured tools for search, source classification, rule extraction, profile matching, verdict generation, saving, audit logging, and prompt-injection detection.
+5. The core verifier applies the conservative verdict policy.
+6. The UI shows results as Best Matches, Need to Confirm, Not for You, or Couldn't Verify Yet.
+
+## Diagrams
+
+The README embeds the public diagrams stored in `docs/assets/`:
+
+- `docs/assets/fundmydegree-system-architecture.png`
+- `docs/assets/fundmydegree-conceptual-data-model.png`
+- `docs/assets/fundmydegree-deployment-runtime-view.png`
 
 ## Components
 
@@ -50,7 +49,7 @@ Routes:
 
 ### Root Orchestrator Agent
 
-Coordinates the workflow. It never produces final eligibility without Verifier Agent output.
+Coordinates the workflow. It never produces a final eligibility verdict without Verifier Agent output.
 
 ### Finder Agent
 
@@ -95,7 +94,7 @@ Stores:
 - Saved results.
 - Audit events.
 
-This is intentionally not a production database. It keeps the Kaggle demo reproducible and avoids adding account or data-retention scope.
+This is intentionally not a production database. It keeps the demo reproducible and avoids adding account or data-retention scope.
 
 ### Evaluation Runner
 

@@ -90,7 +90,7 @@ The UI document section is a checklist only.
 
 ## Fixture/Offline Reproducibility
 
-FundMyDegree currently runs in fixture/offline mode for reproducible Kaggle demos and evals. Live web search is intentionally out of scope for this MVP cleanup pass.
+FundMyDegree currently runs in fixture/offline mode for reproducible demos and evals. Live web search is intentionally out of scope for this version.
 
 ## Known Dependency Advisories
 
@@ -100,7 +100,7 @@ FundMyDegree currently runs in fixture/offline mode for reproducible Kaggle demo
 - Vite depends on the affected esbuild range.
 - The available npm fix requires `npm audit fix --force`, which would install a breaking Vite major version.
 
-Decision: do not run `npm audit fix --force` during this cleanup. The current MVP uses local fixture/demo mode, the production build still passes, and the advisory is documented for the deployment hardening phase.
+Decision: do not run `npm audit fix --force` during this cleanup. The current MVP uses local fixture/demo mode, the production build still passes, and the advisory is documented for a later dependency-hardening pass.
 
 ## Student Safety Language
 

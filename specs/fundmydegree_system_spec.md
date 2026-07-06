@@ -8,10 +8,6 @@ FundMyDegree
 
 Find scholarships that actually fit you.
 
-## Track
-
-Agents for Good
-
 ## Core Product
 
 FundMyDegree helps international students find scholarships that match their profile, then shows what fits, what needs confirmation, and what may not be worth their time before they apply.
@@ -31,7 +27,7 @@ Never mark a scholarship as `eligible` unless official evidence proves the key e
 1. My Profile screen.
 2. My Matches screen.
 3. Does this scholarship fit you? screen.
-4. Why this match?? view.
+4. Why this match? view.
 5. Ask to confirm action.
 6. Saved screen.
 7. Evaluation runner.
@@ -39,7 +35,7 @@ Never mark a scholarship as `eligible` unless official evidence proves the key e
 9. Deployability setup.
 10. Agent Skills folder.
 11. MCP/tool server layer.
-12. Documentation and video script for Kaggle.
+12. Public README and system documentation.
 
 ## Out Of Scope
 
@@ -232,7 +228,7 @@ Tools return structured JSON:
 2. User can search for scholarships.
 3. Candidate scholarships display in grouped sections.
 4. User can verify one scholarship.
-5. Why this match?? shows source URL, rules, verdict reason, and audit log.
+5. Why this match? shows source URL, rules, verdict reason, and audit log.
 6. Unclear scholarship can generate draft email.
 7. Ask to confirm action has no Send button.
 8. Saved works simply.
@@ -240,9 +236,8 @@ Tools return structured JSON:
 10. No API keys are committed.
 11. `.env.example` exists.
 12. Dockerfile and deployment guide exist.
-13. README explains setup and Kaggle concepts.
+13. README explains setup and system design.
 14. AGENTS.md exists.
 15. `.agent/skills` contains four skills.
 16. MCP/tool server exists or is clearly implemented as MCP-style tool layer.
-17. Antigravity demo steps exist.
-18. The app can run in fixture/offline demo mode.
+17. The app can run in fixture/offline demo mode.
