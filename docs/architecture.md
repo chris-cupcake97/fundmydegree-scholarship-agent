@@ -7,9 +7,10 @@ The system is intentionally small:
 1. A student fills My Profile in the React/Vite UI.
 2. The FastAPI backend receives profile, search, verify, save, and draft-email requests.
 3. The Root Orchestrator calls the Finder Agent and Verifier Agent.
-4. The MCP-style tool layer exposes structured tools for search, source classification, rule extraction, profile matching, verdict generation, saving, audit logging, and prompt-injection detection.
-5. The core verifier applies the conservative verdict policy.
-6. The UI shows results as Best Matches, Need to Confirm, Not for You, or Couldn't Verify Yet.
+4. The internal tool registry exposes structured tools for search, source classification, rule extraction, profile matching, verdict generation, saving, audit logging, and prompt-injection detection.
+5. A minimal MCP-compatible stdio wrapper exposes the same tools for demo/client compatibility.
+6. The core verifier applies the conservative verdict policy.
+7. The UI shows results as Best Matches, Need to Confirm, Not for You, or Couldn't Verify Yet.
 
 ## Diagrams
 
@@ -71,7 +72,7 @@ Drafts a safe email only when status is `unclear`. It never sends email.
 
 ### MCP-Style Tool Server
 
-Exposes structured tools:
+The internal registry and the MCP-compatible stdio wrapper expose the same tool set:
 
 - `search_scholarships`
 - `fetch_page`
@@ -82,6 +83,8 @@ Exposes structured tools:
 - `save_result`
 - `write_audit_log`
 - `detect_prompt_injection`
+
+The protocol wrapper lives at `fundmydegree/mcp_server/protocol_server.py` and is documented in `docs/mcp_server.md`.
 
 ### In-Memory Fixture Store
 

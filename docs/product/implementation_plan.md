@@ -29,7 +29,7 @@ Build verification before UI polish:
 3. Source classifier.
 4. Conservative verdict engine.
 5. Eval harness.
-6. MCP/tool server.
+6. Internal tool registry and MCP-compatible wrapper.
 7. Agent layer.
 8. Frontend UI.
 9. Security polish.
@@ -56,7 +56,7 @@ Use only:
 - Verifier Agent.
 - Clarification Email Skill.
 
-## 5. MCP / Tool Server Design
+## 5. Tool Registry / MCP-Compatible Wrapper Design
 
 - `search_scholarships(profile, query)`
 - `fetch_page(url)`
@@ -109,7 +109,7 @@ Use fixture cases across eligible, not eligible, unclear, and unverified.
 3. Phase 3: Source classifier.
 4. Phase 4: Conservative verdict engine.
 5. Phase 5: Eval harness.
-6. Phase 6: MCP/tool server.
+6. Phase 6: Internal tool registry and MCP-compatible wrapper.
 7. Phase 7: Agent layer.
 8. Phase 8: Frontend UI.
 9. Phase 9: Security polish.

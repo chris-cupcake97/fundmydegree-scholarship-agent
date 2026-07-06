@@ -1,4 +1,4 @@
-"""Smoke test the FundMyDegree MCP-style tool layer."""
+"""Smoke test the FundMyDegree local tool registry."""
 
 from __future__ import annotations
 

@@ -39,7 +39,7 @@ The worst failure is a false `eligible` or false "Strong Match".
 Preserve these layers:
 
 - Agent / multi-agent workflow.
-- MCP-style tool server.
+- Internal tool registry and MCP-compatible stdio wrapper.
 - Agent Skills.
 - Security checks.
 - Deployability.

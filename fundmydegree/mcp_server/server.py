@@ -1,4 +1,4 @@
-"""Small JSON command runner for the FundMyDegree MCP-style tool layer."""
+"""Small JSON command runner for the FundMyDegree local tool registry."""
 
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ def _parse_tool_input(raw_parts: list[str]) -> dict[str, Any]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="FundMyDegree MCP-style tool runner")
+    parser = argparse.ArgumentParser(description="FundMyDegree local tool runner")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     subparsers.add_parser("list", help="List tool manifests")

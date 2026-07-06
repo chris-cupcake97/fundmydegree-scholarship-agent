@@ -1,4 +1,4 @@
-"""Tool registry for the FundMyDegree MCP-style server."""
+"""Tool registry for FundMyDegree local and MCP-compatible tool calls."""
 
 from __future__ import annotations
 

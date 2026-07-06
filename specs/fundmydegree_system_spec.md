@@ -34,7 +34,7 @@ Never mark a scholarship as `eligible` unless official evidence proves the key e
 8. Security and audit logging.
 9. Deployability setup.
 10. Agent Skills folder.
-11. MCP/tool server layer.
+11. Internal tool registry and MCP-compatible stdio wrapper.
 12. Public README and system documentation.
 
 ## Out Of Scope
@@ -92,7 +92,8 @@ Student UI
       -> Finder Agent
       -> Verifier Agent
       -> Clarification Email Skill
-    -> MCP/tool server
+    -> Internal tool registry
+    -> MCP-compatible stdio wrapper
     -> In-memory fixture store
     -> Audit logs
     -> Evaluation runner
@@ -133,7 +134,7 @@ Student UI
 - Never sends email.
 - UI must not include a Send button.
 
-## MCP / Tool Server
+## Tool Registry / MCP-Compatible Wrapper
 
 Tools return structured JSON:
 
@@ -239,5 +240,5 @@ Tools return structured JSON:
 13. README explains setup and system design.
 14. AGENTS.md exists.
 15. `.agent/skills` contains four skills.
-16. MCP/tool server exists or is clearly implemented as MCP-style tool layer.
+16. Internal tool registry and MCP-compatible stdio wrapper exist.
 17. The app can run in fixture/offline demo mode.

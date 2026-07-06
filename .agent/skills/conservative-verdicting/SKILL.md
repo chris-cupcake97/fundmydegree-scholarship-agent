@@ -49,11 +49,17 @@ version: 0.1.0
 - Aggregators are never proof.
 - Missing evidence means unclear.
 
+## Safety Notes
+
+- Never produce `eligible` without an official source URL and official source classification.
+- Never override a blocking official rule.
+- Keep uncertainty visible in the student-facing result.
+
 ## Positive Trigger Examples
 
 - "Generate the final verdict from these matched rules."
 - "Apply the FundMyDegree verdict policy."
-- "Check whether this can be Strong Fit."
+- "Check whether this can be a Strong Match."
 
 ## Negative Trigger Examples
 
@@ -66,7 +72,7 @@ version: 0.1.0
 ```json
 {
   "status": "unclear",
-  "student_facing_status": "Needs Clarification",
+  "student_facing_status": "Need to Confirm",
   "verdict_reason": "Funding amount is not explicit on the official source.",
   "matched_rules": [],
   "blocking_rules": [],

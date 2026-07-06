@@ -64,7 +64,7 @@ That difference matters because an opportunity can be real but still not fit a s
 
 ![High-level system architecture](docs/assets/fundmydegree-system-architecture.png)
 
-This view shows how the student UI, FastAPI backend, agent layer, MCP-style tools, core verifier, fixtures, and eval harness fit together.
+This view shows how the student UI, FastAPI backend, agent layer, tool registry, MCP-compatible wrapper, core verifier, fixtures, and eval harness fit together.
 
 ### Conceptual Data Model
 
@@ -85,7 +85,7 @@ The workflow is intentionally narrow:
 ```text
 Student profile
 -> Finder Agent identifies candidate scholarships
--> Tool layer loads scholarship and source data
+-> Tool registry or MCP-compatible wrapper loads scholarship and source data
 -> Verifier Agent checks source evidence and eligibility rules
 -> Conservative verdict engine chooses the safest status
 -> UI explains the result in student-friendly language
@@ -98,6 +98,24 @@ The Finder Agent searches fixture scholarship data and returns structured candid
 The Verifier Agent checks the candidate through the tool sequence: fetch source, classify source, detect prompt injection, extract rules, match the student profile, generate a conservative verdict, and write an audit log.
 
 The clarification helper can draft an email only when the status is unclear. It returns a draft for the student to review and copy. It never sends email.
+
+## MCP-Compatible Tool Server
+
+FundMyDegree includes an internal tool registry used by the demo app and agents. It also includes a minimal MCP-compatible stdio server wrapper around the same tools for capstone/demo compatibility.
+
+The wrapper lives at `fundmydegree/mcp_server/protocol_server.py`. It supports `initialize`, `tools/list`, and `tools/call` over JSON-RPC stdio. It uses fixture/offline data and does not add live web search, email sending, application submission, document upload, or secret access.
+
+Run it with:
+
+```bash
+python -m fundmydegree.mcp_server.protocol_server
+```
+
+Smoke test it with:
+
+```bash
+python -B scripts/smoke_mcp_protocol.py
+```
 
 ## Safety Decisions
 
@@ -121,8 +139,8 @@ Unclear beats wrong.
 
 For the capstone submission, FundMyDegree demonstrates the required concepts through the working system rather than by storing external course artifacts in the repo:
 
-- Agent / multi-agent workflow: Root Orchestrator, Finder, Verifier, and clarification helper.
-- MCP-style tool layer: structured tools under `fundmydegree/mcp_server/`.
+- Agent / multi-agent workflow: ADK-style Root Orchestrator, Finder, Verifier, and clarification helper.
+- MCP Server: internal tool registry plus a minimal MCP-compatible stdio wrapper around the same tools under `fundmydegree/mcp_server/`.
 - Agent Skills: focused skills under `.agent/skills/`.
 - Security features: official-source gate, prompt-injection detection, no auto-send, no auto-submit, no sensitive uploads, audit logs.
 - Evaluation: fixture-based evals with `false_eligible_count = 0`.
@@ -145,7 +163,7 @@ For the capstone submission, FundMyDegree demonstrates the required concepts thr
 - Backend: FastAPI.
 - Core logic: Python data models, source classification, rule extraction, profile matching, and conservative verdicting.
 - Agent layer: ADK-style Python agent classes.
-- Tool layer: MCP-style Python tool registry and structured tool outputs.
+- Tool layer: internal Python tool registry plus MCP-compatible stdio wrapper.
 - Evaluation: fixture-based Python eval runner and smoke tests.
 - Deployment: Docker, Docker Compose, and single-container static frontend plus API serving.
 
@@ -208,6 +226,12 @@ python -m fundmydegree.mcp_server list
 python -m fundmydegree.mcp_server call classify_source fixture_id=eligible_01
 ```
 
+Run the MCP-compatible stdio server:
+
+```bash
+python -m fundmydegree.mcp_server.protocol_server
+```
+
 Run with Docker:
 
 ```bash
@@ -236,6 +260,7 @@ Run smoke tests:
 ```bash
 python -B scripts/smoke_api.py
 python -B scripts/smoke_tools.py
+python -B scripts/smoke_mcp_protocol.py
 python -B scripts/smoke_agents.py
 python -B scripts/smoke_deploy.py
 ```
@@ -258,13 +283,13 @@ false_eligible_count = 0
 - `fundmydegree/ui/` - React/Vite student UI.
 - `fundmydegree/api/` - FastAPI backend routes and services.
 - `fundmydegree/agents/` - Root Orchestrator, Finder, Verifier, and clarification helper.
-- `fundmydegree/mcp_server/` - MCP-style tool registry and tool implementations.
+- `fundmydegree/mcp_server/` - internal tool registry, tool implementations, and MCP-compatible stdio wrapper.
 - `fundmydegree/core/` - trusted source checks, rule matching, verdict policy, and shared models.
 - `.agent/skills/` - focused agent skill instructions.
 - `fixtures/` - offline scholarship fixtures.
 - `evals/` - golden eval cases and eval runner.
 - `scripts/` - smoke tests.
-- `docs/` - system architecture, security, evaluation, deployment, and product notes.
+- `docs/` - system architecture, agents, MCP server, security, evaluation, deployment, and product notes.
 - `Dockerfile` and `docker-compose.yml` - containerized demo setup.
 
 ## License

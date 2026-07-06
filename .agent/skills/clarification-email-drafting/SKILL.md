@@ -14,7 +14,7 @@ version: 0.1.0
 
 ## When Not To Use
 
-- Do not use for `eligible`, `not_eligible`, or `unverified` unless the user explicitly asks for questions.
+- Do not use for `eligible`, `not_eligible`, or `unverified` cases.
 - Do not send email.
 - Do not create a Send button.
 
@@ -46,6 +46,12 @@ Structured draft:
 - Never send email.
 - Ask only about unclear rules.
 - Do not include passport, bank, transcript, or sensitive data.
+
+## Safety Notes
+
+- Return draft-only output with `send_allowed: false`.
+- Do not invent eligibility advice inside the email.
+- Do not include sensitive student documents or private financial details.
 
 ## Positive Trigger Examples
 

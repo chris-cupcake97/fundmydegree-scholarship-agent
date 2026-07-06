@@ -37,16 +37,17 @@ Each case includes:
 
 ## Required Tool Trajectory
 
-Every verification should include:
+The verifier path should include:
 
 1. `fetch_page`
 2. `classify_source`
-3. `extract_rules`
-4. `match_profile`
-5. `generate_verdict`
-6. `write_audit_log`
+3. `detect_prompt_injection`
+4. `extract_rules`
+5. `match_profile`
+6. `generate_verdict`
+7. `write_audit_log`
 
-The agent smoke test also verifies prompt-injection detection in the verifier path.
+The eval runner checks the expected fixture trajectory, source classification, missing evidence behavior, and false eligible failures. The agent and tool smoke tests additionally verify prompt-injection detection in the verifier/tool paths.
 
 ## Automatic Failures
 
@@ -69,6 +70,16 @@ The eval runner prints:
 - Source classification failures.
 - Missing evidence failures.
 - Trajectory failures.
+
+## Smoke Tests
+
+Additional smoke tests cover:
+
+- API behavior and unclear-only email drafting.
+- Internal tool registry behavior.
+- MCP-compatible stdio server initialization, tool listing, and tool calling.
+- Agent orchestration and verifier sequence.
+- Deployment-facing `/health`, `/docs`, and static frontend serving.
 
 ## Fixture Mode
 

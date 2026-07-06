@@ -13,6 +13,7 @@ FundMyDegree must be easy to run locally, easy to evaluate, and clear enough to 
 - README setup instructions.
 - Fixture/offline demo mode.
 - Backend, tool, agent, eval, frontend, and deployment smoke checks.
+- MCP-compatible protocol smoke check.
 - Single-container serving for backend API and built frontend UI.
 
 ## Runtime Shape
@@ -126,11 +127,28 @@ Expected response:
 python -B evals/run_evals.py
 python -B scripts/smoke_api.py
 python -B scripts/smoke_tools.py
+python -B scripts/smoke_mcp_protocol.py
 python -B scripts/smoke_agents.py
 python -B scripts/smoke_deploy.py
 cd fundmydegree/ui
 npm run build
 ```
+
+If Docker is available locally:
+
+```bash
+docker build -t fundmydegree-scholarship-agent .
+docker run --rm -p 8080:8080 fundmydegree-scholarship-agent
+```
+
+Then check:
+
+```text
+http://127.0.0.1:8080/health
+http://127.0.0.1:8080/
+```
+
+Do not treat the Docker run as complete unless those local endpoints respond.
 
 ## Demo Reliability
 

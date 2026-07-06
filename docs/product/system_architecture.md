@@ -9,7 +9,8 @@ Student UI
       -> Finder Agent
       -> Verifier Agent
       -> Clarification Email Skill
-    -> MCP/tool server
+    -> Internal tool registry
+    -> MCP-compatible stdio wrapper
     -> In-memory fixture store
     -> Audit logs
     -> Evaluation runner
@@ -62,7 +63,9 @@ Internally handles:
 - Never sends email.
 - UI must not include a Send button.
 
-## MCP / Tool Server
+## Tool Registry And MCP-Compatible Wrapper
+
+The app and agents use the internal tool registry directly. The repository also includes a minimal MCP-compatible stdio wrapper around the same tools for demo/client compatibility.
 
 Tools:
 

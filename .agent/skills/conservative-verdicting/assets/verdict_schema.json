@@ -8,7 +8,7 @@
     },
     "student_facing_status": {
       "type": "string",
-      "enum": ["Strong Fit", "Needs Clarification", "Not for You", "Unverified Lead"]
+      "enum": ["Strong Match", "Need to Confirm", "Not for You", "Couldn't Verify Yet"]
     },
     "verdict_reason": {
       "type": "string"

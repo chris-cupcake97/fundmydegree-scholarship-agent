@@ -32,7 +32,7 @@ Never mark a scholarship as `eligible` unless official evidence proves the key e
 - Security and audit logging.
 - Deployability setup.
 - Agent Skills folder.
-- MCP/tool server layer.
+- Internal tool registry and MCP-compatible stdio wrapper.
 
 ## Out Of Scope
 

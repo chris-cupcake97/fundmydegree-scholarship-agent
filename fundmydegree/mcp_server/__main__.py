@@ -1,4 +1,4 @@
-"""Run the FundMyDegree MCP-style tool runner."""
+"""Run the FundMyDegree local tool runner."""
 
 from .server import main
 

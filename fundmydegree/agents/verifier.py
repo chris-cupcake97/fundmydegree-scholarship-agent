@@ -19,7 +19,7 @@ EXPECTED_TOOL_SEQUENCE = [
 
 
 class VerifierAgent:
-    """Verifies one scholarship candidate using the MCP-style tools."""
+    """Verifies one scholarship candidate using the structured tool registry."""
 
     name = "Verifier Agent"
 

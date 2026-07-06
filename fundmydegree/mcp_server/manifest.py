@@ -1,4 +1,4 @@
-"""Tool manifest for the FundMyDegree MCP-style server."""
+"""Tool manifest for FundMyDegree local and MCP-compatible tool calls."""
 
 from __future__ import annotations
 

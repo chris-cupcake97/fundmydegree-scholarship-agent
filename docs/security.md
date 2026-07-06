@@ -78,8 +78,10 @@ The UI document section is a checklist only.
 - No university portal autofill exists.
 - Clarification emails are draft-only and expose `send_allowed: false`.
 - The frontend has no Send button.
-- All MCP-style tools return structured JSON.
+- All tools return structured JSON.
+- The MCP-compatible stdio wrapper delegates to the same safe tools.
 - Verification steps are audit logged.
+- No live web search is performed in the current fixture-mode implementation.
 
 ## Secret Handling
 
