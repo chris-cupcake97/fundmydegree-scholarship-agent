@@ -8,7 +8,7 @@ Source screenshots:
 
 ## Key Concepts To Demonstrate
 
-The submission must demonstrate at least three course concepts. ScholarProof will intentionally demonstrate all six:
+The submission must demonstrate at least three course concepts. FundMyDegree will intentionally demonstrate all six:
 
 | Concept | Demonstration |
 |---|---|
@@ -21,7 +21,7 @@ The submission must demonstrate at least three course concepts. ScholarProof wil
 
 ## Category 1: Pitch - Problem, Solution, Value (30 Points)
 
-| Criteria | Points | ScholarProof Plan |
+| Criteria | Points | FundMyDegree Plan |
 |---|---:|---|
 | Core Concept and Value | 10 | Show a focused Agents for Good product for international students: verify real scholarships and conservatively assess fit against a profile. |
 | YouTube Video Submission | 10 | Five-minute demo covering problem, why agents, architecture, working demo, and build tools. Include agent workflow and evidence panel. |
@@ -29,7 +29,7 @@ The submission must demonstrate at least three course concepts. ScholarProof wil
 
 ## Category 2: Implementation - Architecture, Code (70 Points)
 
-| Criteria | Points | ScholarProof Plan |
+| Criteria | Points | FundMyDegree Plan |
 |---|---:|---|
 | Technical Implementation | 50 | Prioritize verification engine, ADK orchestration, MCP tool server, conservative eligibility rules, source citations, tests, and evals. |
 | Documentation | 20 | Include README, setup instructions, architecture diagram, MCP tools, agent flow, eval report, demo script, and deployment notes. |

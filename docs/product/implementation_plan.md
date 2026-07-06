@@ -1,4 +1,4 @@
-# ScholarProof Implementation Plan
+# FundMyDegree Implementation Plan
 
 This document is planning-only. Do not implement full app logic in the scaffold phase.
 
@@ -10,7 +10,7 @@ config/
 docs/
 evals/
 fixtures/scholarships/
-scholarproof/
+fundmydegree/
   agents/
   core/
   mcp_server/

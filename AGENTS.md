@@ -1,10 +1,10 @@
-# ScholarProof Agent Instructions
+# FundMyDegree Agent Instructions
 
 These instructions apply to all work in this repository.
 
 ## Product Boundary
 
-ScholarProof is a focused scholarship fit and trust verification agent for international students.
+FundMyDegree is a focused scholarship fit and trust verification agent for international students.
 
 Do not expand the scope into:
 
@@ -14,7 +14,7 @@ Do not expand the scope into:
 - Real passport, bank statement, or transcript upload.
 - Full SOP or essay writing.
 - A full student CRM.
-- A claim that ScholarProof finds every scholarship globally.
+- A claim that FundMyDegree finds every scholarship globally.
 
 ## Core Rule
 
@@ -22,7 +22,7 @@ Unclear beats wrong.
 
 Never mark a scholarship as `eligible` unless official evidence proves every key eligibility rule needed for the student profile.
 
-The worst failure is a false `eligible` or false "Strong Fit".
+The worst failure is a false `eligible` or false "Strong Match".
 
 ## Build Priorities
 
@@ -81,7 +81,7 @@ Internal statuses:
 
 Student-facing labels:
 
-- `eligible` -> Strong Fit
-- `unclear` -> Needs Clarification
+- `eligible` -> Strong Match
+- `unclear` -> Need to Confirm
 - `not_eligible` -> Not for You
-- `unverified` -> Unverified Lead
+- `unverified` -> Couldn't Verify Yet

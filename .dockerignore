@@ -10,8 +10,8 @@ __pycache__/
 venv/
 
 node_modules/
-scholarproof/ui/node_modules/
-scholarproof/ui/dist/
+fundmydegree/ui/node_modules/
+fundmydegree/ui/dist/
 dist/
 build/
 .vite/

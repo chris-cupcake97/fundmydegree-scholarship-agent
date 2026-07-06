@@ -2,38 +2,38 @@
 
 Capture these screenshots for the Kaggle submission after running the backend and frontend locally.
 
-1. Profile Wizard
-   - Filled student profile.
-   - Profile chips visible.
-   - Document checklist visible as checkboxes only.
+1. My Profile
+   - FundMyDegree brand and tagline visible.
+   - "Tell us about your study goal" form filled with a demo student profile.
+   - Document checklist visible as checkboxes only, with no file upload.
 
-2. Find Scholarships
-   - Grouped results visible.
-   - Best Verified Matches, Needs Clarification, Not for You, and Unverified Leads sections visible.
-   - Strong Fit, Needs Clarification, Not for You, and Unverified Lead labels visible across fixture results.
+2. My Matches
+   - Search box with the "Find matches" action.
+   - Grouped results visible: Best Matches, Need to Confirm, Not for You, and Couldn't Verify Yet.
+   - Student-facing labels visible across fixture results: Strong Match, Need to Confirm, Not for You, and Couldn't Verify Yet.
+   - Match Summary panel visible.
 
-3. Eligibility Checker
-   - Selected scholarship.
-   - Verdict panel.
-   - Matched, blocking, and unclear rules.
+3. Does this scholarship fit you?
+   - Selected scholarship open.
+   - "Our suggestion" section visible.
+   - Sections visible for what matches, what may stop the student, and what still needs confirmation.
 
-4. Evidence Panel
-   - Official source URL.
-   - Official source reason.
-   - Security flags row.
-   - Extracted rules.
-   - Evidence snippets.
-   - Audit log timeline.
+4. Why this match?
+   - Where the information came from.
+   - Why the source is trusted or why confirmation is still needed.
+   - Things to be careful about.
+   - Does this scholarship fit you? and check trail.
 
-5. Draft Email
+5. Ask to confirm
    - Warning banner showing "Draft only".
-   - Copy Draft action.
-   - Save Draft action.
-   - Back to Evidence action.
+   - Copy email action.
+   - Save draft action.
+   - Back to Does this scholarship fit you? action.
    - No Send button.
 
-6. Saved Results
+6. Saved
    - Saved scholarship list.
+   - View details and Remove buttons.
 
 7. Backend API Docs
    - FastAPI docs page at `http://127.0.0.1:8000/docs`.

@@ -1,4 +1,4 @@
-# ScholarProof Evaluation Plan
+# FundMyDegree Evaluation Plan
 
 ## Hard Gate
 

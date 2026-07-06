@@ -2,7 +2,7 @@
 
 ## Goals
 
-ScholarProof must be easy to run locally, easy to evaluate, and clear enough to deploy to Cloud Run or an equivalent service.
+FundMyDegree must be easy to run locally, easy to evaluate, and clear enough to deploy to Cloud Run or an equivalent service.
 
 ## Current Deployment Readiness
 
@@ -33,7 +33,6 @@ Use `.env.example` for names only. Do not commit real values.
 ```text
 APP_ENV=production
 FIXTURE_MODE=true
-DATABASE_URL=sqlite:///data/scholarproof.db
 LOG_LEVEL=info
 HOST=0.0.0.0
 PORT=8080
@@ -49,7 +48,7 @@ MODEL_API_KEY=
 ## Local Backend Run
 
 ```bash
-python -m scholarproof
+python -m fundmydegree
 ```
 
 Default local backend:
@@ -61,7 +60,7 @@ http://127.0.0.1:8000
 ## Local Frontend Run
 
 ```bash
-cd scholarproof/ui
+cd fundmydegree/ui
 npm install
 npm run dev
 ```
@@ -75,13 +74,13 @@ http://127.0.0.1:5173/
 ## Container Build
 
 ```bash
-docker build -t scholarproof .
+docker build -t fundmydegree-agent .
 ```
 
 ## Container Run
 
 ```bash
-docker run --rm -p 8080:8080 scholarproof
+docker run --rm -p 8080:8080 fundmydegree-agent
 ```
 
 Open:
@@ -115,11 +114,13 @@ Expected response:
 ```json
 {
   "status": "ok",
-  "service": "scholarproof-api",
+  "service": "fundmydegree-api",
   "mode": "fixture",
   "verdict_policy": "conservative"
 }
 ```
+
+The `service` value is an internal implementation identifier, not the student-facing product name.
 
 ## Pre-Deployment Checks
 
@@ -128,10 +129,9 @@ python -B evals/run_evals.py
 python -B scripts/smoke_api.py
 python -B scripts/smoke_tools.py
 python -B scripts/smoke_agents.py
-cd scholarproof/ui
-npm run build
-cd ../..
 python -B scripts/smoke_deploy.py
+cd fundmydegree/ui
+npm run build
 ```
 
 ## Demo Reliability

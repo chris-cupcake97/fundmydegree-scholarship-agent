@@ -1,4 +1,4 @@
-# ScholarProof System Architecture
+# FundMyDegree System Architecture
 
 ## Architecture
 
@@ -10,7 +10,7 @@ Student UI
       -> Verifier Agent
       -> Clarification Email Skill
     -> MCP/tool server
-    -> SQLite database
+    -> In-memory fixture store
     -> Audit logs
     -> Evaluation runner
 ```
@@ -42,7 +42,7 @@ Do not create separate agents for every small step.
 - Searches for candidate scholarships.
 - Returns structured candidate data.
 - Does not decide eligibility.
-- Does not call anything "Strong Fit".
+- Does not call anything "Strong Match".
 - Can return official candidates and aggregator leads separately.
 
 ### Verifier Agent

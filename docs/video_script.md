@@ -1,14 +1,14 @@
-# ScholarProof Video Script
+# FundMyDegree Video Script
 
 Target length: 5 minutes.
 
 ## 1. Opening - Problem
 
-International students searching for funding do not need another random scholarship list. They need to know whether an opportunity is real, official, current, and actually right for their profile.
+International students searching for funding do not need another random scholarship list. They need to know which opportunities actually match their country, degree level, field, funding need, and timeline before they spend hours applying.
 
 ## 2. Solution
 
-ScholarProof verifies official scholarship sources and checks eligibility against the student's nationality, residence, fee status, degree level, field, intake, funding need, and deadline.
+FundMyDegree helps students find scholarships that actually fit them. It matches a lightweight student profile against scholarship opportunities, then shows what fits, what needs confirmation, and what may not be worth their time.
 
 Core rule: unclear beats wrong.
 
@@ -16,13 +16,13 @@ Core rule: unclear beats wrong.
 
 Show:
 
-1. Profile Wizard.
-2. Find Scholarships.
-3. Grouped results: Strong Fit, Needs Clarification, Not for You, Unverified Lead.
-4. Eligibility Checker.
-5. Evidence Panel.
-6. Draft Clarification Email.
-7. Saved Results.
+1. My Profile.
+2. My Matches.
+3. Grouped results: Strong Match, Need to Confirm, Not for You, Couldn't Verify Yet.
+4. Does this scholarship fit you?
+5. Why this match?
+6. Ask to confirm.
+7. Saved.
 
 ## 4. Agent Architecture
 
@@ -33,7 +33,7 @@ Show the architecture diagram:
 - Verifier Agent.
 - Clarification Email Skill.
 
-Explain that the Verifier Agent handles source verification, rule extraction, profile matching, conservative verdicting, and evidence generation.
+Explain that the Finder Agent finds candidate scholarships, the Verifier Agent checks official evidence and profile fit, and the Root Orchestrator returns grouped results without inventing eligibility decisions.
 
 ## 5. MCP / Tools
 
@@ -105,4 +105,4 @@ Show:
 
 ## 10. Closing Line
 
-ScholarProof finds scholarships that are real - and right for you.
+FundMyDegree finds scholarships that actually fit you.

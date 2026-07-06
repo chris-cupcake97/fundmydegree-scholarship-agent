@@ -2,6 +2,8 @@
 
 ## Overview
 
+Product name: FundMyDegree.
+
 ```mermaid
 flowchart TD
     UI["Student UI"] --> API["Backend API"]
@@ -12,7 +14,7 @@ flowchart TD
     FINDER --> TOOLS["MCP-style Tool Server"]
     VERIFIER --> TOOLS
     EMAIL --> TOOLS
-    TOOLS --> DB["SQLite Database"]
+    TOOLS --> STORE["In-memory Fixture Store"]
     TOOLS --> LOGS["Audit Logs"]
     TOOLS --> FIXTURES["Fixture Scholarship Data"]
     API --> EVALS["Evaluation Runner"]
@@ -24,12 +26,12 @@ flowchart TD
 
 Screens:
 
-- Profile.
-- Find Scholarships.
-- Eligibility Checker.
-- Evidence Panel.
-- Draft Email.
-- Saved Results.
+- My Profile.
+- My Matches.
+- Does this scholarship fit you?
+- Why this match?
+- Ask to confirm.
+- Saved.
 
 ### Backend API
 
@@ -82,7 +84,7 @@ Exposes structured tools:
 - `write_audit_log`
 - `detect_prompt_injection`
 
-### SQLite Database
+### In-Memory Fixture Store
 
 Stores:
 
@@ -92,6 +94,8 @@ Stores:
 - Clarification email drafts.
 - Saved results.
 - Audit events.
+
+This is intentionally not a production database. It keeps the Kaggle demo reproducible and avoids adding account or data-retention scope.
 
 ### Evaluation Runner
 

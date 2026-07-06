@@ -1,4 +1,4 @@
-"""Run fixture evals for the ScholarProof verification engine."""
+"""Run fixture evals for the FundMyDegree verification engine."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scholarproof.core.fixture_flow import verify_fixture_case  # noqa: E402
+from fundmydegree.core.fixture_flow import verify_fixture_case  # noqa: E402
 
 
 EXPECTED_TRAJECTORY = [
@@ -105,7 +105,7 @@ def run() -> int:
                 failures.append(f"{case_id}: verdict generated before source classification")
 
     passed = not failures and false_eligible_count == 0
-    print("ScholarProof evals")
+    print("FundMyDegree evals")
     print(f"total_cases: {len(cases)}")
     print(f"correct_verdict_count: {correct_verdict_count}")
     print(f"false_eligible_count: {false_eligible_count}")
@@ -122,4 +122,3 @@ def run() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(run())
-

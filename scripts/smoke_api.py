@@ -1,4 +1,4 @@
-"""Smoke test the ScholarProof FastAPI routes in fixture mode."""
+"""Smoke test the FundMyDegree FastAPI routes in fixture mode."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ warnings.filterwarnings(
 
 from fastapi.testclient import TestClient  # noqa: E402
 
-from scholarproof.api.app import app  # noqa: E402
+from fundmydegree.api.app import app  # noqa: E402
 
 
 def _load_case(case_id: str) -> dict:
@@ -121,7 +121,7 @@ def main() -> int:
     )
     assert [event["tool"] for event in audit["audit_log"]][-1] == "write_audit_log"
 
-    print("ScholarProof API smoke")
+    print("FundMyDegree API smoke")
     print("health: ok")
     print(f"profile_id: {profile_id}")
     print(f"unclear_verification_id: {unclear_verification_id}")

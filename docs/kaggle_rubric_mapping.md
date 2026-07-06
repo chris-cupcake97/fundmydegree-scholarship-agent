@@ -1,5 +1,7 @@
 # Kaggle Rubric Mapping
 
+Product name: FundMyDegree.
+
 Source of truth:
 
 - `docs/competition/evaluation_screenshot.png`
@@ -8,25 +10,25 @@ Source of truth:
 
 ## Required Course Concepts
 
-| Kaggle Concept | ScholarProof Mapping | Demonstration |
+| Kaggle Concept | FundMyDegree Mapping | Demonstration |
 |---|---|---|
-| Agent / multi-agent system using ADK | ADK-style layer in `scholarproof/agents/`: Root Orchestrator Agent + Finder Agent + Verifier Agent + Clarification Email Skill wrapper. | Code |
-| MCP Server | MCP-style tool server in `scholarproof/mcp_server/` for search, fetch, source classification, rule extraction, profile matching, verdict generation, saving, audit logging, and prompt-injection detection. | Code |
+| Agent / multi-agent system using ADK | ADK-style layer in `fundmydegree/agents/`: Root Orchestrator Agent + Finder Agent + Verifier Agent + Clarification Email Skill wrapper. | Code |
+| MCP Server | MCP-style tool server in `fundmydegree/mcp_server/` for search, fetch, source classification, rule extraction, profile matching, verdict generation, saving, audit logging, and prompt-injection detection. | Code |
 | Antigravity | Demo workflow showing repo inspection, UI issue fixing, diff review, local run, and browser testing. | Video |
 | Security features | Official-source gate, no auto-send, no auto-submit, prompt-injection detection, no sensitive uploads, audit logs. | Code and video |
-| Deployability | Dockerfile, Docker Compose, `.env.example`, `/health`, deployment docs, fixture demo mode, backend smoke tests, frontend build checks, and deployment smoke test. | Video and docs |
+| Deployability | Dockerfile, Docker Compose, `.env.example`, `/health`, deployment docs, fixture demo mode, backend smoke tests, frontend build checks, deployment smoke test, and Docker image build. | Video and docs |
 | Agent Skills | Four skills under `.agent/skills/`. | Code and video |
 
 ## Pitch Rubric: 30 Points
 
 ### Core Concept and Value - 10 Points
 
-ScholarProof is focused on a real student pain: avoiding fake, stale, irrelevant, or unclear scholarship opportunities.
+FundMyDegree is focused on a real student pain: finding scholarships that match the student, while avoiding fake, stale, irrelevant, or unclear opportunities.
 
 Value:
 
 - Reduces wasted student effort.
-- Provides official-source evidence.
+- Puts matching first and evidence behind each suggestion.
 - Makes uncertainty visible.
 - Helps international students ask better clarification questions.
 
@@ -38,7 +40,7 @@ The video should show:
 2. Why agents are useful.
 3. Architecture.
 4. UI demo.
-5. Evidence panel.
+5. Why this match? flow.
 6. Eval runner.
 7. Build tools and Antigravity workflow.
 
@@ -64,11 +66,12 @@ Strong implementation evidence:
 - Verification engine before UI polish.
 - Conservative verdict policy.
 - Structured data models.
-- MCP-style tool layer in `scholarproof/mcp_server/` with a registry, manifest, and smoke test.
-- ADK-style agent layer in `scholarproof/agents/` with Root Orchestrator, Finder, Verifier, and Clarification Email Skill wrapper.
+- MCP-style tool layer in `fundmydegree/mcp_server/` with a registry, manifest, and smoke test.
+- ADK-style agent layer in `fundmydegree/agents/` with Root Orchestrator, Finder, Verifier, and Clarification Email Skill wrapper.
 - Fixture mode for reliable demo.
 - Eval runner with `false_eligible_count = 0`.
 - Security and audit logging.
+- React/Vite student UI using the FundMyDegree brand.
 
 ### Documentation - 20 Points
 
@@ -76,13 +79,14 @@ Required documentation:
 
 - `README.md`
 - `AGENTS.md`
-- `specs/scholarproof_system_spec.md`
+- `specs/fundmydegree_system_spec.md`
 - `docs/architecture.md`
 - `docs/security.md`
 - `docs/evaluation.md`
 - `docs/deployment.md`
 - `docs/video_script.md`
 - `docs/kaggle_rubric_mapping.md`
+- `docs/rebrand_audit.md`
 - `docs/antigravity_demo_steps.md`
 
 ## No-Secrets Reminder

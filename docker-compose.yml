@@ -1,5 +1,5 @@
 services:
-  scholarproof:
+  fundmydegree:
     build: .
     ports:
       - "8080:8080"

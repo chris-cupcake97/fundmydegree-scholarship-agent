@@ -1,10 +1,10 @@
-# ScholarProof Product Spec
+# FundMyDegree Product Spec
 
 ## Product
 
-ScholarProof helps international students find scholarships that are real, current, and actually applicable to their profile.
+FundMyDegree helps international students find scholarships that match their profile, then shows what fits, what needs confirmation, and what may not be worth their time before they apply.
 
-Tagline: Find scholarships that are real - and right for you.
+Tagline: Find scholarships that actually fit you.
 
 Track: Agents for Good
 
@@ -24,12 +24,12 @@ Never mark a scholarship as `eligible` unless official evidence proves the key e
 
 ## MVP Features
 
-- Student Profile Wizard.
-- Find Scholarships screen.
-- Eligibility Checker screen.
-- Evidence Panel screen.
-- Draft Clarification Email screen.
-- Simple Saved Results screen.
+- My Profile screen.
+- My Matches screen.
+- Does this scholarship fit you? screen.
+- Why this match?? view.
+- Ask to confirm action.
+- Saved screen.
 - Evaluation runner.
 - Security/audit logging.
 - Deployability setup.
@@ -51,11 +51,11 @@ Never mark a scholarship as `eligible` unless official evidence proves the key e
 
 | Backend status | UI label |
 |---|---|
-| `eligible` | Strong Fit |
-| `unclear` | Needs Clarification |
+| `eligible` | Strong Match |
+| `unclear` | Need to Confirm |
 | `not_eligible` | Not for You |
-| `unverified` | Unverified Lead |
+| `unverified` | Couldn't Verify Yet |
 
 ## Product Principle
 
-ScholarProof is a source and eligibility verification assistant, not a scholarship application submitter.
+FundMyDegree is a scholarship matching and fit guidance assistant, not a scholarship application submitter.

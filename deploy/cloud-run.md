@@ -1,22 +1,24 @@
 # Cloud Run Deployment
 
-ScholarProof is packaged as one container for the capstone demo. The container serves:
+FundMyDegree is packaged as one container for the capstone demo. The container serves:
 
 - React/Vite frontend from `/`
 - FastAPI docs from `/docs`
 - API routes from `/api/*`
 - Health check from `/health`
 
+The Python module entrypoint is `python -m fundmydegree`.
+
 ## Build Locally
 
 ```bash
-docker build -t scholarproof .
+docker build -t fundmydegree-agent .
 ```
 
 ## Run Locally
 
 ```bash
-docker run --rm -p 8080:8080 scholarproof
+docker run --rm -p 8080:8080 fundmydegree-agent
 ```
 
 Open:
@@ -32,9 +34,9 @@ http://127.0.0.1:8080/health
 Replace `PROJECT_ID` and `REGION` before running.
 
 ```bash
-gcloud builds submit --tag gcr.io/PROJECT_ID/scholarproof
-gcloud run deploy scholarproof \
-  --image gcr.io/PROJECT_ID/scholarproof \
+gcloud builds submit --tag gcr.io/PROJECT_ID/fundmydegree-agent
+gcloud run deploy fundmydegree-agent \
+  --image gcr.io/PROJECT_ID/fundmydegree-agent \
   --region REGION \
   --allow-unauthenticated \
   --set-env-vars APP_ENV=production,FIXTURE_MODE=true

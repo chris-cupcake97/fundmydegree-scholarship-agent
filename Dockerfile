@@ -1,11 +1,11 @@
 FROM node:20-slim AS ui-build
 
-WORKDIR /app/scholarproof/ui
+WORKDIR /app/fundmydegree/ui
 
-COPY scholarproof/ui/package*.json ./
+COPY fundmydegree/ui/package*.json ./
 RUN npm ci
 
-COPY scholarproof/ui/ ./
+COPY fundmydegree/ui/ ./
 RUN npm run build
 
 FROM python:3.12-slim AS runtime
@@ -19,7 +19,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-RUN addgroup --system scholarproof && adduser --system --ingroup scholarproof scholarproof
+RUN addgroup --system fundmydegree && adduser --system --ingroup fundmydegree fundmydegree
 
 COPY requirements.txt ./
 RUN python -m pip install --no-cache-dir -r requirements.txt
@@ -31,11 +31,11 @@ COPY evals/ ./evals/
 COPY fixtures/ ./fixtures/
 COPY scripts/ ./scripts/
 COPY specs/ ./specs/
-COPY scholarproof/ ./scholarproof/
-COPY --from=ui-build /app/scholarproof/ui/dist ./scholarproof/ui/dist
+COPY fundmydegree/ ./fundmydegree/
+COPY --from=ui-build /app/fundmydegree/ui/dist ./fundmydegree/ui/dist
 
-USER scholarproof
+USER fundmydegree
 
 EXPOSE 8080
 
-CMD ["python", "-m", "scholarproof"]
+CMD ["python", "-m", "fundmydegree"]

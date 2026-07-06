@@ -2,7 +2,7 @@
 
 ## Security Principle
 
-ScholarProof handles student-facing eligibility guidance. It must prefer uncertainty over false confidence.
+FundMyDegree handles student-facing scholarship fit guidance. It must prefer uncertainty over false confidence.
 
 Core rule:
 
@@ -10,7 +10,7 @@ Core rule:
 Unclear beats wrong.
 ```
 
-ScholarProof provides evidence-backed scholarship fit guidance. It does not guarantee admission, funding, eligibility, or scholarship success. Final decisions belong to universities, governments, or scholarship providers.
+FundMyDegree provides evidence-backed scholarship fit guidance. It does not guarantee admission, funding, eligibility, or scholarship success. Final decisions belong to universities, governments, or scholarship providers.
 
 ## Official-Source Eligibility Gate
 
@@ -90,7 +90,7 @@ The UI document section is a checklist only.
 
 ## Fixture/Offline Reproducibility
 
-ScholarProof currently runs in fixture/offline mode for reproducible Kaggle demos and evals. Live web search is intentionally out of scope for this MVP cleanup pass.
+FundMyDegree currently runs in fixture/offline mode for reproducible Kaggle demos and evals. Live web search is intentionally out of scope for this MVP cleanup pass.
 
 ## Known Dependency Advisories
 
@@ -106,10 +106,10 @@ Decision: do not run `npm audit fix --force` during this cleanup. The current MV
 
 Student-facing language must make uncertainty visible:
 
-- Strong Fit
-- Needs Clarification
+- Strong Match
+- Need to Confirm
 - Not for You
-- Unverified Lead
+- Couldn't Verify Yet
 
 Do not use fake percentage scores such as "87% eligible."
 

@@ -1,6 +1,6 @@
 ---
 name: conservative-verdicting
-description: Apply ScholarProof's unclear-beats-wrong verdict policy to matched scholarship rules.
+description: Apply FundMyDegree's unclear-beats-wrong verdict policy to matched scholarship rules.
 version: 0.1.0
 ---
 
@@ -52,7 +52,7 @@ version: 0.1.0
 ## Positive Trigger Examples
 
 - "Generate the final verdict from these matched rules."
-- "Apply the ScholarProof verdict policy."
+- "Apply the FundMyDegree verdict policy."
 - "Check whether this can be Strong Fit."
 
 ## Negative Trigger Examples

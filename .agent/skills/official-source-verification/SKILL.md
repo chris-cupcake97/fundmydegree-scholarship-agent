@@ -1,6 +1,6 @@
 ---
 name: official-source-verification
-description: Verify whether a scholarship source can count as official evidence for ScholarProof.
+description: Verify whether a scholarship source can count as official evidence for FundMyDegree.
 version: 0.1.0
 ---
 

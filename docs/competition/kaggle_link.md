@@ -10,7 +10,7 @@ Local rubric screenshots:
 - `docs/competition/pitch_rubric_screenshot.png`
 - `docs/competition/implementation_rubric_screenshot.png`
 
-ScholarProof should be planned against the local screenshots first, because they capture the key evaluation requirements:
+FundMyDegree should be planned against the local screenshots first, because they capture the key evaluation requirements:
 
 - Demonstrate at least three course concepts.
 - Prefer demonstrating all six planned concepts for strength: ADK agents, MCP server, Antigravity, security, deployability, and Agent Skills.

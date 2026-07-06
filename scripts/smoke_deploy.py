@@ -18,7 +18,7 @@ warnings.filterwarnings(
 
 from fastapi.testclient import TestClient  # noqa: E402
 
-from scholarproof.api.app import UI_DIST, app  # noqa: E402
+from fundmydegree.api.app import UI_DIST, app  # noqa: E402
 
 
 def main() -> int:
@@ -31,12 +31,12 @@ def main() -> int:
     docs = client.get("/docs")
     assert docs.status_code == 200, docs.text
 
-    assert UI_DIST.exists(), "Frontend dist is missing. Run `npm run build` in scholarproof/ui first."
+    assert UI_DIST.exists(), "Frontend dist is missing. Run `npm run build` in fundmydegree/ui first."
     index = client.get("/")
     assert index.status_code == 200, index.text[:200]
-    assert "ScholarProof" in index.text
+    assert "FundMyDegree" in index.text
 
-    print("ScholarProof deployment smoke")
+    print("FundMyDegree deployment smoke")
     print("health: ok")
     print("docs: ok")
     print("frontend_static: ok")

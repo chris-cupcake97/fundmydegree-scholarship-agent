@@ -1,4 +1,4 @@
-"""Smoke test the ADK-style ScholarProof agent layer."""
+"""Smoke test the ADK-style FundMyDegree agent layer."""
 
 from __future__ import annotations
 
@@ -10,14 +10,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scholarproof.agents import (  # noqa: E402
+from fundmydegree.agents import (  # noqa: E402
     ClarificationEmailSkillWrapper,
     FinderAgent,
     RootOrchestratorAgent,
     VerifierAgent,
 )
-from scholarproof.agents.verifier import EXPECTED_TOOL_SEQUENCE  # noqa: E402
-from scholarproof.api.store import store  # noqa: E402
+from fundmydegree.agents.verifier import EXPECTED_TOOL_SEQUENCE  # noqa: E402
+from fundmydegree.api.store import store  # noqa: E402
 
 
 def _load_case(case_id: str) -> dict:
@@ -122,7 +122,7 @@ def main() -> int:
     assert not_eligible["status"] == "not_eligible"
     assert not_eligible["blocking_rules"]
 
-    print("ScholarProof agent smoke")
+    print("FundMyDegree agent smoke")
     print("orchestrator_fixture_search: ok")
     print("finder_returns_candidates_without_verdicts: ok")
     print("verifier_tool_sequence: ok")
@@ -137,4 +137,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

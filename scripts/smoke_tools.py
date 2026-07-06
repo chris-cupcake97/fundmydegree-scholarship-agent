@@ -1,4 +1,4 @@
-"""Smoke test the ScholarProof MCP-style tool layer."""
+"""Smoke test the FundMyDegree MCP-style tool layer."""
 
 from __future__ import annotations
 
@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scholarproof.api.store import store  # noqa: E402
-from scholarproof.mcp_server.registry import call_tool, get_tool_manifest, list_tools  # noqa: E402
+from fundmydegree.api.store import store  # noqa: E402
+from fundmydegree.mcp_server.registry import call_tool, get_tool_manifest, list_tools  # noqa: E402
 
 
 REQUIRED_TOOLS = {
@@ -147,7 +147,7 @@ def main() -> int:
     prompt = _tool("detect_prompt_injection", {"fixture_id": "unverified_01"})
     assert prompt["flagged"] is True
 
-    print("ScholarProof tool smoke")
+    print("FundMyDegree tool smoke")
     print(f"manifest_tools: {len(manifest)}")
     print("search_scholarships: ok")
     print("stepwise_unclear_workflow: ok")
@@ -164,4 +164,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
